@@ -1,0 +1,18 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: dft-street-manager-api-deployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: dft-street-manager-api
+    spec:
+      containers:
+      - name: dft-street-manager-api
+        image: schottmichal/go-restful-api-example
+        ports:
+          - containerPort: 3000
+            name: http
+            protocol: TCP
