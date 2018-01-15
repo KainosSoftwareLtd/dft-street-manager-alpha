@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: dft-street-manager-api
-        image: schottmichal/go-restful-api-example
+        image: schottmichal/go-restful-api-example:latest
         ports:
           - containerPort: 3000
             name: http
