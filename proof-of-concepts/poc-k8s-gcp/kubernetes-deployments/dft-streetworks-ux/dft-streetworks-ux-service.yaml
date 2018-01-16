@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: dft-street-manager-ux
+  name: dft-street-manager-ux-service
+spec:
+  selector:
+    app: dft-street-manager-ux
+  ports:
+  - port: 80
+    targetPort: 3000
+#  type: LoadBalancer
