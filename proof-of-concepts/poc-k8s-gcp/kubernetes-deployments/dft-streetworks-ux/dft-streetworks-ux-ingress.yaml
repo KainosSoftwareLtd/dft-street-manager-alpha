@@ -1,0 +1,8 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: dft-streetworks-ux-ingress
+spec:
+  backend:
+    serviceName: dft-street-manager-ux-service
+    servicePort: 80
