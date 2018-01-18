@@ -1,8 +1,7 @@
-# https://cloud.google.com/compute/docs/load-balancing/http/content-based-example
+# Use GOOGLE_CREDENTIALS env variable to point to auth json file
 
 provider "google" {
   region      = "${var.region}"
   project     = "${var.project_name}"
-  credentials = "${file("${var.credentials_file_path}")}"
   zone        = "${var.region_zone}"
 }

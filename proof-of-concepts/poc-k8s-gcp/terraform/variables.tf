@@ -11,11 +11,6 @@ variable "project_name" {
   description = "StreetWorks Project"
 }
 
-variable "credentials_file_path" {
-  default     = "~/.gcloud/streetworks-alpha-e90823b1cfd2.json"
-  description = "Path to the JSON file used to describe your account credentials"
-}
-
 # AZs
 variable "azs" {
   default     = ["europe-west2-a", "europe-west2-b", "europe-west2-c"]
