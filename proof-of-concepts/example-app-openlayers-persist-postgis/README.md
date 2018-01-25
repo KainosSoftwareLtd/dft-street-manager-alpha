@@ -4,6 +4,8 @@ Proof of concept to draw a point and persist that to a postgis instance.
 
 Simple Node Express app based on the examples [here](https://openlayers.org/en/latest/examples/index.html).
 
+![screenshot](https://raw.githubusercontent.com/KainosSoftwareLtd/dft-street-manager-alpha/master/proof-of-concepts/example-app-openlayers-persist-postgis/public/images/screenshot.png)
+
 ## Requires
 
 * NodeJS
