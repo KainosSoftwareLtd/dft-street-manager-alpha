@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  div(id="map", class="map")
+  div(id="coords")= message
+  form(method="POST")
+    input(id="lat", name="lat")
+    input(id="lon", name="lon")
+    input(type="submit", value="Submit")
