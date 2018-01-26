@@ -1,0 +1,9 @@
+imports:
+- path: vm-template.jinja
+- path: network-template.jinja
+- path: firewall-template.jinja
+- path: compute-engine-template.jinja
+
+resources:
+  - name: compute-engine-setup
+    type: compute-engine-template.jinja
