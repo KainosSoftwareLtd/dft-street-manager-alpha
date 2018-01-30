@@ -1,0 +1,24 @@
+version: "3.2"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    volumes:
+      - .:/root/app
+    environment:
+      - PG_HOST=db
+
+  db:
+    image: kartoza/postgis:9.6-2.4
+
+  db_provision:
+    build: ./docker/db_provision
+    environment:
+      - PGHOST=db
+    depends_on:
+      - db
