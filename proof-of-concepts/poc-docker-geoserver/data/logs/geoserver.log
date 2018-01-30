@@ -1,0 +1,269 @@
+2018-01-30 20:10:54,313 INFO [org.geoserver] - GeoServer configuration lock is enabled
+2018-01-30 20:10:55,009 INFO [org.geoserver] - Loaded style 'pophatch'
+2018-01-30 20:10:55,010 INFO [org.geoserver] - Loaded style 'grass'
+2018-01-30 20:10:55,011 INFO [org.geoserver] - Loaded style 'line'
+2018-01-30 20:10:55,012 INFO [org.geoserver] - Loaded style 'polygon'
+2018-01-30 20:10:55,012 INFO [org.geoserver] - Loaded style 'simple_roads'
+2018-01-30 20:10:55,013 INFO [org.geoserver] - Loaded style 'point'
+2018-01-30 20:10:55,014 INFO [org.geoserver] - Loaded style 'giant_polygon'
+2018-01-30 20:10:55,014 INFO [org.geoserver] - Loaded style 'burg'
+2018-01-30 20:10:55,015 INFO [org.geoserver] - Loaded style 'dem'
+2018-01-30 20:10:55,016 INFO [org.geoserver] - Loaded style 'cite_lakes'
+2018-01-30 20:10:55,016 INFO [org.geoserver] - Loaded style 'poly_landmarks'
+2018-01-30 20:10:55,017 INFO [org.geoserver] - Loaded style 'rain'
+2018-01-30 20:10:55,018 INFO [org.geoserver] - Loaded style 'restricted'
+2018-01-30 20:10:55,019 INFO [org.geoserver] - Loaded style 'population'
+2018-01-30 20:10:55,020 INFO [org.geoserver] - Loaded style 'simple_streams'
+2018-01-30 20:10:55,022 INFO [org.geoserver] - Loaded style 'tiger_roads'
+2018-01-30 20:10:55,022 INFO [org.geoserver] - Loaded style 'green'
+2018-01-30 20:10:55,023 INFO [org.geoserver] - Loaded style 'poi'
+2018-01-30 20:10:55,024 INFO [org.geoserver] - Loaded style 'generic'
+2018-01-30 20:10:55,025 INFO [org.geoserver] - Loaded style 'raster'
+2018-01-30 20:10:55,025 INFO [org.geoserver] - Loaded style 'capitals'
+2018-01-30 20:10:55,026 INFO [org.geoserver] - Loaded default workspace cite
+2018-01-30 20:10:55,035 INFO [org.geoserver] - Loaded workspace 'topp'
+2018-01-30 20:10:55,044 INFO [org.geoserver] - Loaded workspace 'sde'
+2018-01-30 20:10:55,046 INFO [org.geoserver] - Loaded workspace 'it.geosolutions'
+2018-01-30 20:10:55,047 INFO [org.geoserver] - Loaded workspace 'sf'
+2018-01-30 20:10:55,049 INFO [org.geoserver] - Loaded workspace 'cite'
+2018-01-30 20:10:55,050 INFO [org.geoserver] - Loaded workspace 'tiger'
+2018-01-30 20:10:55,051 INFO [org.geoserver] - Loaded workspace 'nurc'
+2018-01-30 20:10:55,483 INFO [org.geoserver] - Loaded data store 'states_shapefile', enabled
+2018-01-30 20:10:56,395 INFO [org.geoserver] - Loaded feature type 'states', enabled
+2018-01-30 20:10:56,414 INFO [org.geoserver] - Loaded layer 'states'
+2018-01-30 20:10:56,420 INFO [org.geoserver] - Loaded data store 'taz_shapes', enabled
+2018-01-30 20:10:56,442 INFO [org.geoserver] - Loaded feature type 'tasmania_state_boundaries', enabled
+2018-01-30 20:10:56,448 INFO [org.geoserver] - Loaded layer 'tasmania_state_boundaries'
+2018-01-30 20:10:56,455 INFO [org.geoserver] - Loaded feature type 'tasmania_cities', enabled
+2018-01-30 20:10:56,459 INFO [org.geoserver] - Loaded layer 'tasmania_cities'
+2018-01-30 20:10:56,462 INFO [org.geoserver] - Loaded feature type 'tasmania_water_bodies', enabled
+2018-01-30 20:10:56,468 INFO [org.geoserver] - Loaded layer 'tasmania_water_bodies'
+2018-01-30 20:10:56,471 INFO [org.geoserver] - Loaded feature type 'tasmania_roads', enabled
+2018-01-30 20:10:56,476 INFO [org.geoserver] - Loaded layer 'tasmania_roads'
+2018-01-30 20:10:56,495 INFO [org.geoserver] - Loaded coverage store 'sfdem', enabled
+2018-01-30 20:10:56,759 INFO [org.geoserver] - Loaded coverage 'sfdem', enabled
+2018-01-30 20:10:56,763 INFO [org.geoserver] - Loaded layer 'sfdem'
+2018-01-30 20:10:56,770 INFO [org.geoserver] - Loaded data store 'sf', enabled
+2018-01-30 20:10:56,787 INFO [org.geoserver] - Loaded feature type 'restricted', enabled
+2018-01-30 20:10:56,793 INFO [org.geoserver] - Loaded layer 'restricted'
+2018-01-30 20:10:56,796 INFO [org.geoserver] - Loaded feature type 'streams', enabled
+2018-01-30 20:10:56,798 INFO [org.geoserver] - Loaded layer 'streams'
+2018-01-30 20:10:56,800 INFO [org.geoserver] - Loaded feature type 'bugsites', enabled
+2018-01-30 20:10:56,803 INFO [org.geoserver] - Loaded layer 'bugsites'
+2018-01-30 20:10:56,805 INFO [org.geoserver] - Loaded feature type 'archsites', enabled
+2018-01-30 20:10:56,808 INFO [org.geoserver] - Loaded layer 'archsites'
+2018-01-30 20:10:56,813 INFO [org.geoserver] - Loaded feature type 'roads', enabled
+2018-01-30 20:10:56,814 INFO [org.geoserver] - Loaded layer 'roads'
+2018-01-30 20:10:56,824 INFO [org.geoserver] - Loaded data store 'nyc', enabled
+2018-01-30 20:10:56,829 INFO [org.geoserver] - Loaded feature type 'poi', enabled
+2018-01-30 20:10:56,831 INFO [org.geoserver] - Loaded layer 'poi'
+2018-01-30 20:10:56,836 INFO [org.geoserver] - Loaded feature type 'tiger_roads', enabled
+2018-01-30 20:10:56,846 INFO [org.geoserver] - Loaded layer 'tiger_roads'
+2018-01-30 20:10:56,853 INFO [org.geoserver] - Loaded feature type 'giant_polygon', enabled
+2018-01-30 20:10:56,854 INFO [org.geoserver] - Loaded layer 'giant_polygon'
+2018-01-30 20:10:56,862 INFO [org.geoserver] - Loaded feature type 'poly_landmarks', enabled
+2018-01-30 20:10:56,864 INFO [org.geoserver] - Loaded layer 'poly_landmarks'
+2018-01-30 20:10:56,872 INFO [org.geoserver] - Loaded coverage store 'mosaic', enabled
+2018-01-30 20:10:56,888 INFO [org.geoserver] - Loaded coverage 'mosaic', enabled
+2018-01-30 20:10:56,893 INFO [org.geoserver] - Loaded layer 'mosaic'
+2018-01-30 20:10:56,895 INFO [org.geoserver] - Loaded coverage store 'arcGridSample', enabled
+2018-01-30 20:10:56,898 INFO [org.geoserver] - Loaded coverage 'Arc_Sample', enabled
+2018-01-30 20:10:56,899 INFO [org.geoserver] - Loaded layer 'Arc_Sample'
+2018-01-30 20:10:56,900 INFO [org.geoserver] - Loaded coverage store 'img_sample2', enabled
+2018-01-30 20:10:56,907 INFO [org.geoserver] - Loaded coverage 'Pk50095', enabled
+2018-01-30 20:10:56,908 INFO [org.geoserver] - Loaded layer 'Pk50095'
+2018-01-30 20:10:56,910 INFO [org.geoserver] - Loaded coverage store 'worldImageSample', enabled
+2018-01-30 20:10:56,912 INFO [org.geoserver] - Loaded coverage 'Img_Sample', enabled
+2018-01-30 20:10:56,913 INFO [org.geoserver] - Loaded layer 'Img_Sample'
+2018-01-30 20:10:56,927 INFO [org.geoserver] - Loaded layer group 'tiger-ny'
+2018-01-30 20:10:56,930 INFO [org.geoserver] - Loaded layer group 'tasmania'
+2018-01-30 20:10:56,932 INFO [org.geoserver] - Loaded layer group 'spearfish'
+2018-01-30 20:10:57,106 INFO [org.geoserver] - Loaded service 'wcs', enabled
+2018-01-30 20:10:57,108 INFO [org.geoserver] - Loaded service 'WMTSInfoImpl--5b04f915:16148b1a4d4:-8000', enabled
+2018-01-30 20:10:57,126 INFO [org.geoserver] - Loaded service 'wfs', enabled
+2018-01-30 20:10:57,163 INFO [org.geoserver] - Loaded service 'wms', enabled
+2018-01-30 20:10:57,229 INFO [config.GeoserverXMLResourceProvider] - Will look for 'geowebcache.xml' in directory '/home/geoserver/geoserver-2.12.1/data_dir/gwc'.
+2018-01-30 20:10:57,243 WARN [config.GeoserverXMLResourceProvider] - Found no configuration file in config directory, will create one at 'gwc/geowebcache.xml' from template jar:file:/home/geoserver/geoserver-2.12.1/webapps/geoserver/WEB-INF/lib/gwc-core-1.12.1.jar!/geowebcache_empty.xml
+2018-01-30 20:10:57,250 INFO [config.GeoserverXMLResourceProvider] - Found configuration file in gwc
+2018-01-30 20:10:57,251 INFO [config.GeoserverXMLResourceProvider] - Found configuration file in gwc
+2018-01-30 20:10:57,322 WARN [config.XMLConfiguration] - ********************************************************************************
+2018-01-30 20:10:57,323 WARN [config.XMLConfiguration] - *** GWC configuration validation error: cvc-elt.1: Cannot find the declaration of element 'gwcConfiguration'.
+2018-01-30 20:10:57,323 WARN [config.XMLConfiguration] - *** Will try to use configuration anyway. Please check the order of declared elements against the schema.
+2018-01-30 20:10:57,325 WARN [config.XMLConfiguration] - ********************************************************************************
+2018-01-30 20:10:57,438 INFO [gwc.layer] - Initializing GWC configuration based on GeoServer's Catalog
+2018-01-30 20:10:57,439 INFO [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+2018-01-30 20:10:57,439 INFO [gwc.layer] - Loading tile layers from gwc-layers
+2018-01-30 20:10:57,444 INFO [layer.TileLayerDispatcher] - Configuration GeoServer Catalog Configuration contained no layers.
+2018-01-30 20:10:57,444 INFO [config.XMLConfiguration] - Initializing GridSets from gwc
+2018-01-30 20:10:57,445 INFO [config.XMLConfiguration] - Initializing layers from gwc
+2018-01-30 20:10:57,452 INFO [layer.TileLayerDispatcher] - Configuration gwc contained no layers.
+2018-01-30 20:10:57,464 INFO [storage.DefaultStorageFinder] - ********************************************************************************************************************************************
+2018-01-30 20:10:57,464 INFO [storage.DefaultStorageFinder] - *** Found Java environment variable GEOSERVER_DATA_DIR set to /home/geoserver/geoserver-2.12.1/data_dir, using it as the default prefix. ***
+2018-01-30 20:10:57,464 INFO [storage.DefaultStorageFinder] - ********************************************************************************************************************************************
+2018-01-30 20:10:57,527 INFO [gwc.config] - Initializing GeoServer specific GWC configuration from gwc-gs.xml
+2018-01-30 20:10:58,562 INFO [config.GeoserverXMLResourceProvider] - Will look for 'geowebcache-diskquota.xml' in directory '/home/geoserver/geoserver-2.12.1/data_dir/gwc'.
+2018-01-30 20:10:58,576 INFO [config.GeoserverXMLResourceProvider] - Will look for 'geowebcache-diskquota-jdbc.xml' in directory '/home/geoserver/geoserver-2.12.1/data_dir/gwc'.
+2018-01-30 20:10:58,588 INFO [diskquota.ConfigLoader] - DiskQuota configuration is not readable: gwc/geowebcache-diskquota.xml
+2018-01-30 20:10:58,613 INFO [diskquota.ConfigLoader] - DiskQuota configuration is not readable: gwc/geowebcache-diskquota.xml
+2018-01-30 20:10:58,616 INFO [diskquota.DiskQuotaMonitor] - Setting up disk quota periodic enforcement task
+2018-01-30 20:10:58,617 INFO [diskquota.DiskQuotaMonitor] - 0 layers configured with their own quotas. 
+2018-01-30 20:10:58,621 INFO [diskquota.DiskQuotaMonitor] - 22 layers attached to global quota 500.0 MB
+2018-01-30 20:10:58,662 INFO [diskquota.DiskQuotaMonitor] - Disk quota periodic enforcement task set up every 10 SECONDS
+2018-01-30 20:10:59,617 INFO [ows.OWSHandlerMapping] - Mapped URL path [/ows/**] onto handler 'dispatcher'
+2018-01-30 20:10:59,618 INFO [ows.OWSHandlerMapping] - Mapped URL path [/ows] onto handler 'dispatcher'
+2018-01-30 20:10:59,677 INFO [ows.OWSHandlerMapping] - Mapped URL path [/wcs] onto handler 'dispatcher'
+2018-01-30 20:10:59,677 INFO [ows.OWSHandlerMapping] - Mapped URL path [/wcs/*] onto handler 'dispatcher'
+2018-01-30 20:10:59,730 INFO [ows.OWSHandlerMapping] - Mapped URL path [/gwc/service/**] onto handler 'dispatcher'
+2018-01-30 20:10:59,762 INFO [geowebcache.GeoWebCacheDispatcher] - Invoked setServletPrefix(gwc)
+2018-01-30 20:10:59,821 INFO [georss.GeoRSSPoller] - Initializing GeoRSS poller in a background job...
+2018-01-30 20:10:59,822 INFO [georss.GeoRSSPoller] - No enabled GeoRSS feeds found, poller will not run.
+2018-01-30 20:10:59,885 INFO [wms.WMSService] - Will NOT recombine tiles for non-tiling clients.
+2018-01-30 20:10:59,885 INFO [wms.WMSService] - Will proxy requests to backend that are not getmap or getcapabilities.
+2018-01-30 20:11:00,158 INFO [ows.OWSHandlerMapping] - Mapped URL path [/TestWfsPost] onto handler 'wfsTestServlet'
+2018-01-30 20:11:00,158 INFO [ows.OWSHandlerMapping] - Mapped URL path [/wfs/*] onto handler 'dispatcher'
+2018-01-30 20:11:00,158 INFO [ows.OWSHandlerMapping] - Mapped URL path [/wfs] onto handler 'dispatcher'
+2018-01-30 20:11:03,968 INFO [ows.OWSHandlerMapping] - Mapped URL path [/kml] onto handler 'dispatcher'
+2018-01-30 20:11:03,969 INFO [ows.OWSHandlerMapping] - Mapped URL path [/kml/*] onto handler 'dispatcher'
+2018-01-30 20:11:03,969 INFO [ows.OWSHandlerMapping] - Mapped URL path [/kml/icon/**/*] onto handler 'kmlIconService'
+2018-01-30 20:11:04,147 INFO [ows.OWSHandlerMapping] - Mapped URL path [/wms] onto handler 'dispatcher'
+2018-01-30 20:11:04,151 INFO [ows.OWSHandlerMapping] - Mapped URL path [/wms/*] onto handler 'dispatcher'
+2018-01-30 20:11:04,269 INFO [ows.OWSHandlerMapping] - Mapped URL path [/animate/*] onto handler 'dispatcher'
+2018-01-30 20:11:04,270 INFO [ows.OWSHandlerMapping] - Mapped URL path [/animate] onto handler 'dispatcher'
+2018-01-30 20:11:05,030 INFO [geoserver.security] - AuthenticationCache Initialized with 1000 Max Entries, 300 seconds idle time, 600 seconds time to live and 3 concurrency level
+2018-01-30 20:11:05,031 INFO [geoserver.security] - AuthenticationCache Eviction Task created to run every 600 seconds
+2018-01-30 20:11:05,361 INFO [geoserver.security] - Start reloading user/groups for service named default
+2018-01-30 20:11:05,364 INFO [geoserver.security] - Reloading user/groups successful for service named default
+2018-01-30 20:13:32,935 INFO [org.geoserver] - GeoServer configuration lock is enabled
+2018-01-30 20:13:33,718 INFO [org.geoserver] - Loaded style 'burg'
+2018-01-30 20:13:33,720 INFO [org.geoserver] - Loaded style 'simple_roads'
+2018-01-30 20:13:33,721 INFO [org.geoserver] - Loaded style 'giant_polygon'
+2018-01-30 20:13:33,722 INFO [org.geoserver] - Loaded style 'poi'
+2018-01-30 20:13:33,723 INFO [org.geoserver] - Loaded style 'population'
+2018-01-30 20:13:33,726 INFO [org.geoserver] - Loaded style 'polygon'
+2018-01-30 20:13:33,728 INFO [org.geoserver] - Loaded style 'pophatch'
+2018-01-30 20:13:33,731 INFO [org.geoserver] - Loaded style 'raster'
+2018-01-30 20:13:33,733 INFO [org.geoserver] - Loaded style 'simple_streams'
+2018-01-30 20:13:33,735 INFO [org.geoserver] - Loaded style 'restricted'
+2018-01-30 20:13:33,735 INFO [org.geoserver] - Loaded style 'tiger_roads'
+2018-01-30 20:13:33,741 INFO [org.geoserver] - Loaded style 'grass'
+2018-01-30 20:13:33,744 INFO [org.geoserver] - Loaded style 'point'
+2018-01-30 20:13:33,751 INFO [org.geoserver] - Loaded style 'dem'
+2018-01-30 20:13:33,753 INFO [org.geoserver] - Loaded style 'capitals'
+2018-01-30 20:13:33,756 INFO [org.geoserver] - Loaded style 'green'
+2018-01-30 20:13:33,758 INFO [org.geoserver] - Loaded style 'poly_landmarks'
+2018-01-30 20:13:33,761 INFO [org.geoserver] - Loaded style 'generic'
+2018-01-30 20:13:33,764 INFO [org.geoserver] - Loaded style 'line'
+2018-01-30 20:13:33,767 INFO [org.geoserver] - Loaded style 'cite_lakes'
+2018-01-30 20:13:33,768 INFO [org.geoserver] - Loaded style 'rain'
+2018-01-30 20:13:33,775 INFO [org.geoserver] - Loaded default workspace cite
+2018-01-30 20:13:33,809 INFO [org.geoserver] - Loaded workspace 'nurc'
+2018-01-30 20:13:33,821 INFO [org.geoserver] - Loaded workspace 'cite'
+2018-01-30 20:13:33,825 INFO [org.geoserver] - Loaded workspace 'tiger'
+2018-01-30 20:13:33,828 INFO [org.geoserver] - Loaded workspace 'sde'
+2018-01-30 20:13:33,834 INFO [org.geoserver] - Loaded workspace 'sf'
+2018-01-30 20:13:33,839 INFO [org.geoserver] - Loaded workspace 'it.geosolutions'
+2018-01-30 20:13:33,843 INFO [org.geoserver] - Loaded workspace 'topp'
+2018-01-30 20:13:34,111 INFO [org.geoserver] - Loaded coverage store 'arcGridSample', enabled
+2018-01-30 20:13:35,045 INFO [org.geoserver] - Loaded coverage 'Arc_Sample', enabled
+2018-01-30 20:13:35,063 INFO [org.geoserver] - Loaded layer 'Arc_Sample'
+2018-01-30 20:13:35,067 INFO [org.geoserver] - Loaded coverage store 'img_sample2', enabled
+2018-01-30 20:13:35,325 INFO [org.geoserver] - Loaded coverage 'Pk50095', enabled
+2018-01-30 20:13:35,329 INFO [org.geoserver] - Loaded layer 'Pk50095'
+2018-01-30 20:13:35,332 INFO [org.geoserver] - Loaded coverage store 'mosaic', enabled
+2018-01-30 20:13:35,356 INFO [org.geoserver] - Loaded coverage 'mosaic', enabled
+2018-01-30 20:13:35,361 INFO [org.geoserver] - Loaded layer 'mosaic'
+2018-01-30 20:13:35,364 INFO [org.geoserver] - Loaded coverage store 'worldImageSample', enabled
+2018-01-30 20:13:35,379 INFO [org.geoserver] - Loaded coverage 'Img_Sample', enabled
+2018-01-30 20:13:35,383 INFO [org.geoserver] - Loaded layer 'Img_Sample'
+2018-01-30 20:13:35,561 INFO [org.geoserver] - Loaded data store 'nyc', enabled
+2018-01-30 20:13:35,592 INFO [org.geoserver] - Loaded feature type 'poly_landmarks', enabled
+2018-01-30 20:13:35,600 INFO [org.geoserver] - Loaded layer 'poly_landmarks'
+2018-01-30 20:13:35,602 INFO [org.geoserver] - Loaded feature type 'poi', enabled
+2018-01-30 20:13:35,604 INFO [org.geoserver] - Loaded layer 'poi'
+2018-01-30 20:13:35,609 INFO [org.geoserver] - Loaded feature type 'giant_polygon', enabled
+2018-01-30 20:13:35,619 INFO [org.geoserver] - Loaded layer 'giant_polygon'
+2018-01-30 20:13:35,623 INFO [org.geoserver] - Loaded feature type 'tiger_roads', enabled
+2018-01-30 20:13:35,627 INFO [org.geoserver] - Loaded layer 'tiger_roads'
+2018-01-30 20:13:35,663 INFO [org.geoserver] - Loaded data store 'sf', enabled
+2018-01-30 20:13:35,725 INFO [org.geoserver] - Loaded feature type 'restricted', enabled
+2018-01-30 20:13:35,729 INFO [org.geoserver] - Loaded layer 'restricted'
+2018-01-30 20:13:35,732 INFO [org.geoserver] - Loaded feature type 'bugsites', enabled
+2018-01-30 20:13:35,735 INFO [org.geoserver] - Loaded layer 'bugsites'
+2018-01-30 20:13:35,741 INFO [org.geoserver] - Loaded feature type 'roads', enabled
+2018-01-30 20:13:35,746 INFO [org.geoserver] - Loaded layer 'roads'
+2018-01-30 20:13:35,752 INFO [org.geoserver] - Loaded feature type 'streams', enabled
+2018-01-30 20:13:35,753 INFO [org.geoserver] - Loaded layer 'streams'
+2018-01-30 20:13:35,761 INFO [org.geoserver] - Loaded feature type 'archsites', enabled
+2018-01-30 20:13:35,764 INFO [org.geoserver] - Loaded layer 'archsites'
+2018-01-30 20:13:35,768 INFO [org.geoserver] - Loaded coverage store 'sfdem', enabled
+2018-01-30 20:13:35,787 INFO [org.geoserver] - Loaded coverage 'sfdem', enabled
+2018-01-30 20:13:35,793 INFO [org.geoserver] - Loaded layer 'sfdem'
+2018-01-30 20:13:35,817 INFO [org.geoserver] - Loaded data store 'taz_shapes', enabled
+2018-01-30 20:13:35,833 INFO [org.geoserver] - Loaded feature type 'tasmania_water_bodies', enabled
+2018-01-30 20:13:35,835 INFO [org.geoserver] - Loaded layer 'tasmania_water_bodies'
+2018-01-30 20:13:35,844 INFO [org.geoserver] - Loaded feature type 'tasmania_cities', enabled
+2018-01-30 20:13:35,862 INFO [org.geoserver] - Loaded layer 'tasmania_cities'
+2018-01-30 20:13:35,869 INFO [org.geoserver] - Loaded feature type 'tasmania_state_boundaries', enabled
+2018-01-30 20:13:35,871 INFO [org.geoserver] - Loaded layer 'tasmania_state_boundaries'
+2018-01-30 20:13:35,873 INFO [org.geoserver] - Loaded feature type 'tasmania_roads', enabled
+2018-01-30 20:13:35,876 INFO [org.geoserver] - Loaded layer 'tasmania_roads'
+2018-01-30 20:13:35,892 INFO [org.geoserver] - Loaded data store 'states_shapefile', enabled
+2018-01-30 20:13:35,905 INFO [org.geoserver] - Loaded feature type 'states', enabled
+2018-01-30 20:13:35,906 INFO [org.geoserver] - Loaded layer 'states'
+2018-01-30 20:13:35,933 INFO [org.geoserver] - Loaded layer group 'tiger-ny'
+2018-01-30 20:13:35,937 INFO [org.geoserver] - Loaded layer group 'spearfish'
+2018-01-30 20:13:35,941 INFO [org.geoserver] - Loaded layer group 'tasmania'
+2018-01-30 20:13:36,198 INFO [org.geoserver] - Loaded service 'wcs', enabled
+2018-01-30 20:13:36,202 INFO [org.geoserver] - Loaded service 'WMTSInfoImpl--63d91716:16148b41249:-8000', enabled
+2018-01-30 20:13:36,224 INFO [org.geoserver] - Loaded service 'wfs', enabled
+2018-01-30 20:13:36,262 INFO [org.geoserver] - Loaded service 'wms', enabled
+2018-01-30 20:13:36,339 INFO [config.GeoserverXMLResourceProvider] - Will look for 'geowebcache.xml' in directory '/var/lib/geoserver_data/gwc'.
+2018-01-30 20:13:36,353 INFO [config.GeoserverXMLResourceProvider] - Found configuration file in gwc
+2018-01-30 20:13:36,354 INFO [config.GeoserverXMLResourceProvider] - Found configuration file in gwc
+2018-01-30 20:13:36,355 INFO [config.GeoserverXMLResourceProvider] - Found configuration file in gwc
+2018-01-30 20:13:36,405 WARN [config.XMLConfiguration] - ********************************************************************************
+2018-01-30 20:13:36,405 WARN [config.XMLConfiguration] - *** GWC configuration validation error: cvc-elt.1: Cannot find the declaration of element 'gwcConfiguration'.
+2018-01-30 20:13:36,406 WARN [config.XMLConfiguration] - *** Will try to use configuration anyway. Please check the order of declared elements against the schema.
+2018-01-30 20:13:36,408 WARN [config.XMLConfiguration] - ********************************************************************************
+2018-01-30 20:13:36,530 INFO [gwc.layer] - Initializing GWC configuration based on GeoServer's Catalog
+2018-01-30 20:13:36,531 INFO [gwc.layer] - GeoServer TileLayer store base directory is: gwc-layers
+2018-01-30 20:13:36,531 INFO [gwc.layer] - Loading tile layers from gwc-layers
+2018-01-30 20:13:36,605 INFO [config.XMLConfiguration] - Initializing GridSets from gwc
+2018-01-30 20:13:36,606 INFO [config.XMLConfiguration] - Initializing layers from gwc
+2018-01-30 20:13:36,606 INFO [layer.TileLayerDispatcher] - Configuration gwc contained no layers.
+2018-01-30 20:13:36,622 INFO [storage.DefaultStorageFinder] - **************************************************************************************************************************
+2018-01-30 20:13:36,622 INFO [storage.DefaultStorageFinder] - *** Found Java environment variable GEOSERVER_DATA_DIR set to /var/lib/geoserver_data, using it as the default prefix. ***
+2018-01-30 20:13:36,623 INFO [storage.DefaultStorageFinder] - **************************************************************************************************************************
+2018-01-30 20:13:36,695 INFO [gwc.config] - Initializing GeoServer specific GWC configuration from gwc-gs.xml
+2018-01-30 20:13:37,167 INFO [config.GeoserverXMLResourceProvider] - Will look for 'geowebcache-diskquota.xml' in directory '/var/lib/geoserver_data/gwc'.
+2018-01-30 20:13:37,252 INFO [config.GeoserverXMLResourceProvider] - Will look for 'geowebcache-diskquota-jdbc.xml' in directory '/var/lib/geoserver_data/gwc'.
+2018-01-30 20:13:37,282 INFO [diskquota.ConfigLoader] - DiskQuota configuration is not readable: gwc/geowebcache-diskquota.xml
+2018-01-30 20:13:37,305 INFO [diskquota.ConfigLoader] - DiskQuota configuration is not readable: gwc/geowebcache-diskquota.xml
+2018-01-30 20:13:37,312 INFO [diskquota.DiskQuotaMonitor] - Setting up disk quota periodic enforcement task
+2018-01-30 20:13:37,313 INFO [diskquota.DiskQuotaMonitor] - 0 layers configured with their own quotas. 
+2018-01-30 20:13:37,316 INFO [diskquota.DiskQuotaMonitor] - 22 layers attached to global quota 500.0 MB
+2018-01-30 20:13:37,361 INFO [diskquota.DiskQuotaMonitor] - Disk quota periodic enforcement task set up every 10 SECONDS
+2018-01-30 20:13:38,114 INFO [ows.OWSHandlerMapping] - Mapped URL path [/ows/**] onto handler 'dispatcher'
+2018-01-30 20:13:38,115 INFO [ows.OWSHandlerMapping] - Mapped URL path [/ows] onto handler 'dispatcher'
+2018-01-30 20:13:38,180 INFO [ows.OWSHandlerMapping] - Mapped URL path [/wcs] onto handler 'dispatcher'
+2018-01-30 20:13:38,181 INFO [ows.OWSHandlerMapping] - Mapped URL path [/wcs/*] onto handler 'dispatcher'
+2018-01-30 20:13:38,234 INFO [ows.OWSHandlerMapping] - Mapped URL path [/gwc/service/**] onto handler 'dispatcher'
+2018-01-30 20:13:38,263 INFO [geowebcache.GeoWebCacheDispatcher] - Invoked setServletPrefix(gwc)
+2018-01-30 20:13:38,311 INFO [georss.GeoRSSPoller] - Initializing GeoRSS poller in a background job...
+2018-01-30 20:13:38,321 INFO [georss.GeoRSSPoller] - No enabled GeoRSS feeds found, poller will not run.
+2018-01-30 20:13:38,403 INFO [wms.WMSService] - Will NOT recombine tiles for non-tiling clients.
+2018-01-30 20:13:38,403 INFO [wms.WMSService] - Will proxy requests to backend that are not getmap or getcapabilities.
+2018-01-30 20:13:38,721 INFO [ows.OWSHandlerMapping] - Mapped URL path [/TestWfsPost] onto handler 'wfsTestServlet'
+2018-01-30 20:13:38,721 INFO [ows.OWSHandlerMapping] - Mapped URL path [/wfs/*] onto handler 'dispatcher'
+2018-01-30 20:13:38,722 INFO [ows.OWSHandlerMapping] - Mapped URL path [/wfs] onto handler 'dispatcher'
+2018-01-30 20:13:41,887 INFO [ows.OWSHandlerMapping] - Mapped URL path [/kml] onto handler 'dispatcher'
+2018-01-30 20:13:41,888 INFO [ows.OWSHandlerMapping] - Mapped URL path [/kml/*] onto handler 'dispatcher'
+2018-01-30 20:13:41,888 INFO [ows.OWSHandlerMapping] - Mapped URL path [/kml/icon/**/*] onto handler 'kmlIconService'
+2018-01-30 20:13:42,054 INFO [ows.OWSHandlerMapping] - Mapped URL path [/wms] onto handler 'dispatcher'
+2018-01-30 20:13:42,054 INFO [ows.OWSHandlerMapping] - Mapped URL path [/wms/*] onto handler 'dispatcher'
+2018-01-30 20:13:42,164 INFO [ows.OWSHandlerMapping] - Mapped URL path [/animate/*] onto handler 'dispatcher'
+2018-01-30 20:13:42,164 INFO [ows.OWSHandlerMapping] - Mapped URL path [/animate] onto handler 'dispatcher'
+2018-01-30 20:13:43,344 INFO [geoserver.security] - Start reloading user/groups for service named default
+2018-01-30 20:13:43,361 INFO [geoserver.security] - Reloading user/groups successful for service named default
+2018-01-30 20:13:43,626 INFO [geoserver.security] - AuthenticationCache Initialized with 1000 Max Entries, 300 seconds idle time, 600 seconds time to live and 3 concurrency level
+2018-01-30 20:13:43,627 INFO [geoserver.security] - AuthenticationCache Eviction Task created to run every 600 seconds
