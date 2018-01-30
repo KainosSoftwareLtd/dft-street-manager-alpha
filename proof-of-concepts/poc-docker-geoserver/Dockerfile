@@ -13,12 +13,14 @@ RUN apk upgrade --no-cache && \
     chown -R geoserver:geoserver /var/lib/geoserver_data
 
 VOLUME ["/var/lib/geoserver_data"]
+
 WORKDIR /home/geoserver
 
 ENTRYPOINT ["/sbin/tini", "--"]
 
 # Deps
 FROM base AS dependencies
+
 RUN apk add --no-cache curl unzip && \
     curl -OL http://sourceforge.net/projects/geoserver/files/GeoServer/${GEOSERVER_VERSION}/geoserver-${GEOSERVER_VERSION}-bin.zip && \
     unzip geoserver-${GEOSERVER_VERSION}-bin.zip
@@ -27,7 +29,13 @@ RUN apk add --no-cache curl unzip && \
 FROM base AS release
 COPY --from=dependencies /home/geoserver/geoserver-${GEOSERVER_VERSION} ./geoserver-${GEOSERVER_VERSION}
 RUN chown geoserver:geoserver -R /home/geoserver /var/lib/geoserver_data
+
 USER geoserver
-ENV GEOSERVER_HOME=/home/geoserver/geoserver-${GEOSERVER_VERSION}
+
+ENV GEOSERVER_HOME="/home/geoserver/geoserver-${GEOSERVER_VERSION}"
+ENV GEOSERVER_DATA_DIR="/var/lib/geoserver_data"
+ENV JAVA_OPTS="-server -Xms1g -Xmx1g"
+
 EXPOSE 8080
+
 CMD /home/geoserver/geoserver-${GEOSERVER_VERSION}/bin/startup.sh
