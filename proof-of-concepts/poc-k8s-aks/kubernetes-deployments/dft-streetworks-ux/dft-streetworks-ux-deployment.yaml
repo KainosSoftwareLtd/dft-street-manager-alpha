@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: dft-street-manager-ux-deployment
+spec:
+  selector:
+    matchLabels:
+      app: dft-street-manager-ux
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: dft-street-manager-ux
+    spec:
+      containers:
+      - name: dft-street-manager-ux
+        image: streetworksux.azurecr.io/dft-streetworks-ux:latest
+        ports:
+        - containerPort: 3000
