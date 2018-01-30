@@ -251,7 +251,7 @@ A: In short - yes. Until explicity defined, anything by default is not publicly 
 
 **Q: Will the private-via-bastion network layout cause us issues when publishing services to the internet?**
 
-A: 
+A: This approach is not available for Kubernetes-as-a-Service.
 
 **Q: What technical gaps, limitations or technical challenges were encountered with the technology, tooling or process, during the spike?**
 
