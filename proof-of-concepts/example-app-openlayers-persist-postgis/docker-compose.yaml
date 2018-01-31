@@ -19,6 +19,6 @@ services:
   db_provision:
     build: ./docker/db_provision
     environment:
-      - PGHOST=db
+      - PG_HOST=db
     depends_on:
       - db
