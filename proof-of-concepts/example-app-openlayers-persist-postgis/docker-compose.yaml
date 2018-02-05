@@ -9,7 +9,7 @@ services:
     depends_on:
       - db
     volumes:
-      - .:/root/app
+      - .:/opt/app
     environment:
       - PG_HOST=db
 
