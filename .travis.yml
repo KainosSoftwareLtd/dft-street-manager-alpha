@@ -5,3 +5,5 @@ script: docker build -t ${DOCKER_REPO_HOSTNAME}/${DOCKER_REPO_NAME}:$(git rev-pa
 deploy:
   - provider: script
     script: "./deploy.sh ${DOCKER_REPO_HOSTNAME} ${DOCKER_REPO_NAME}"
+    on:
+      branch: master
