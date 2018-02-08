@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: dft-street-manager-web
+  name: dft-street-manager-web-service
+spec:
+  selector:
+    app: dft-street-manager-web
+  ports:
+  - port: 80
+    targetPort: 3000
