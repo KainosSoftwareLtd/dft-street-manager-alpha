@@ -3,6 +3,7 @@ language: bash
 env:
   global:
   - PATH="${HOME}/bin:${PATH}"
+  - GEOSERVER_REPO="dtf-street-works-geoserver"
 
 services:
   - docker
@@ -19,11 +20,19 @@ before_script:
   - gcloud auth activate-service-account $(grep client_email ${HOME}/cicd.json |cut -d\" -f4) --key-file=${HOME}/cicd.json
 
 script:
+  - cd proof-of-concepts/poc-docker-geoserver && docker build -t ${DOCKER_REPO_HOSTNAME}/$(grep project_id ${HOME}/cicd.json |cut -d\" -f4)/${GEOSERVER_REPO}:$TRAVIS_COMMIT .
+  - ./release.sh ${DOCKER_REPO_HOSTNAME} ${GEOSERVER_REPO} $TRAVIS_COMMIT
+  - cd ../../
   - cd proof-of-concepts/example-app-openlayers-persist-postgis && docker build -t ${DOCKER_REPO_HOSTNAME}/$(grep project_id ${HOME}/cicd.json |cut -d\" -f4)/${DOCKER_REPO_NAME}:$TRAVIS_COMMIT .
   - ./release.sh ${DOCKER_REPO_HOSTNAME} ${DOCKER_REPO_NAME} $TRAVIS_COMMIT
+  - cd ../../
 
 deploy:
   - provider: script
-    script: "./deploy.sh streetworks-dev-cluster ${DOCKER_REPO_HOSTNAME} ${DOCKER_REPO_NAME} $TRAVIS_COMMIT"
+    script: "cd proof-of-concepts/poc-docker-geoserver && ./deploy.sh streetworks-dev-cluster ${DOCKER_REPO_HOSTNAME} ${GEOSERVER_REPO} $TRAVIS_COMMIT && cd ../../"
+    on:
+      branch: master
+  - provider: script
+    script: "cd proof-of-concepts/example-app-openlayers-persist-postgis && ./deploy.sh streetworks-dev-cluster ${DOCKER_REPO_HOSTNAME} ${DOCKER_REPO_NAME} $TRAVIS_COMMIT && cd ../../"
     on:
       branch: master

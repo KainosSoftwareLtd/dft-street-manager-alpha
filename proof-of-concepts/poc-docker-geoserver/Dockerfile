@@ -23,7 +23,7 @@ FROM base AS dependencies
 
 RUN apk add --no-cache curl unzip && \
     curl -OL http://sourceforge.net/projects/geoserver/files/GeoServer/${GEOSERVER_VERSION}/geoserver-${GEOSERVER_VERSION}-bin.zip && \
-    unzip geoserver-${GEOSERVER_VERSION}-bin.zip
+    unzip -q geoserver-${GEOSERVER_VERSION}-bin.zip
 
 # Final image
 FROM base AS release
