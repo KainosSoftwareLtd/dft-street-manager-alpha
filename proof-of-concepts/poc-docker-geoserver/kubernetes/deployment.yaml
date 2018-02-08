@@ -24,3 +24,5 @@ spec:
           requests:
             memory: 256Mi
             cpu: 250m
+      nodeSelector:
+        system: false

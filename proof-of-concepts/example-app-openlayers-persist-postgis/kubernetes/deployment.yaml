@@ -50,3 +50,5 @@ spec:
               secretKeyRef:
                 name: dft-street-manager-web-secret
                 key: PG_PORT
+      nodeSelector:
+        system: false
