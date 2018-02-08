@@ -23,6 +23,6 @@ spec:
             cpu: 1m
           requests:
             memory: 1024Mi
-            cpu: 500m
+            cpu: 0.5m
       nodeSelector:
-        system: false
+        system: "false"
