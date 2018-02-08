@@ -34,7 +34,7 @@ USER geoserver
 
 ENV GEOSERVER_HOME="/home/geoserver/geoserver-${GEOSERVER_VERSION}"
 ENV GEOSERVER_DATA_DIR="/var/lib/geoserver_data"
-ENV JAVA_OPTS="-server -Xms1g -Xmx1g"
+ENV JAVA_OPTS="-server -Xms2g -Xmx2g"
 
 EXPOSE 8080
 
