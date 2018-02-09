@@ -1,0 +1,54 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: dft-street-manager-maps-api-deployment
+spec:
+  selector:
+    matchLabels:
+      app: dft-street-manager-maps-api
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: dft-street-manager-maps-api
+    spec:
+      containers:
+      - name: dft-street-manager-maps-api
+        image: <DOCKER_REPO_HOSTNAME>/<DOCKER_PROJECT_ID>/<DOCKER_REPO_NAME>:<DOCKER_TAG>
+        ports:
+          - containerPort: 3000
+        resources:
+          limits:
+            memory: 512Mi
+            cpu: 0.5m
+          requests:
+            memory: 256Mi
+            cpu: 0.25m
+        env:
+          - name: PG_USER
+            valueFrom:
+              secretKeyRef:
+                name: dft-street-manager-maps-api-secret
+                key: PG_USER
+          - name: PG_HOST
+            valueFrom:
+              secretKeyRef:
+                name: dft-street-manager-maps-api-secret
+                key: PG_HOST
+          - name: PG_DATABASE
+            valueFrom:
+              secretKeyRef:
+                name: dft-street-manager-maps-api-secret
+                key: PG_DATABASE
+          - name: PG_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: dft-street-manager-maps-api-secret
+                key: PG_PASSWORD
+          - name: PG_PORT
+            valueFrom:
+              secretKeyRef:
+                name: dft-street-manager-maps-api-secret
+                key: PG_PORT
+      nodeSelector:
+        system: "false"

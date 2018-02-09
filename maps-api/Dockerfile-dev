@@ -1,0 +1,19 @@
+# Base
+FROM alpine:3.7
+
+RUN apk upgrade --no-cache && \
+    apk add --no-cache \
+      nodejs \
+      nodejs-npm \
+      tini \
+    && \
+    adduser -D nodejs
+
+VOLUME ["/opt/app"]
+WORKDIR /opt/app
+RUN chown nodejs:nodejs -R /opt/app
+USER nodejs
+ENTRYPOINT ["/sbin/tini", "--"]
+
+EXPOSE 8000
+CMD ["sh", "-c", "npm set progress=false && npm config set depth 0 && npm install && npm run start"]
