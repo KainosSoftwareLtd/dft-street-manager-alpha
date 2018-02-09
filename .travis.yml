@@ -38,10 +38,10 @@ deploy:
     on:
       branch: master
   - provider: script
-    script: "cd maps-api && ./deploy.sh streetworks-dev-cluster ${DOCKER_REPO_HOSTNAME} ${DOCKER_REPO_NAME} $TRAVIS_COMMIT && cd ../"
+    script: "cd maps-api && ./deploy.sh streetworks-dev-cluster ${DOCKER_REPO_HOSTNAME} ${MAPS_API_REPO} $TRAVIS_COMMIT && cd ../"
     on:
       branch: master
   - provider: script
-    script: "cd maps-ui && ./deploy.sh streetworks-dev-cluster ${DOCKER_REPO_HOSTNAME} ${DOCKER_REPO_NAME} $TRAVIS_COMMIT && cd ../"
+    script: "cd maps-ui && ./deploy.sh streetworks-dev-cluster ${DOCKER_REPO_HOSTNAME} ${MAPS_UI_REPO} $TRAVIS_COMMIT && cd ../"
     on:
       branch: master
