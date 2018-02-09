@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: dft-street-manager-maps-ui-ingress
+spec:
+  rules:
+    - host: develop.stwrks-dev.net
+      http:
+        paths:
+          - backend:
+              serviceName: dft-street-manager-maps-ui-service
+              servicePort: 80
+            path: /

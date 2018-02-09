@@ -32,5 +32,5 @@ COPY --from=dependencies /opt/app/prod_node_modules ./node_modules
 COPY . .
 RUN chown nodejs:nodejs -R /opt/app
 USER nodejs
-EXPOSE 3000
+EXPOSE 8000
 CMD npm run start
