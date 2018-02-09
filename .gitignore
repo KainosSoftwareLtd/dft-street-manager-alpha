@@ -1,1 +1,5 @@
 .DS_Store
+/maps-api/node_modules
+/maps-api/.idea
+/maps-api/*.iml
+/.idea
