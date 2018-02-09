@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Permit Application - Street Manager
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+
+    {% include "includes/phase_banner_alpha.html" %}
+
+    {% if validationError %}
+    <p class="error-summary">{{validationError}}</p>
+    {% endif %}
+
+    <div class="breadcrumbs">
+        <div>
+            <!-- the rest of this label is hidden, only used for screenreaders -->
+            <span class="visuallyhidden"> to the previous page</span>
+            <a id="sign-out" href="sign_in" style="float:right">Sign out</a>
+            <span style="float:right; margin-right:10px;">promo@sm.com</span>
+        </div>
+    </div>
+
+    <a href="../task-list-page.html" class="link-back" title="Back to previous question">Back</a>
+
+    <h2 class="heading-large">1. Plan & create</h2>
+
+    <form action="confirm-permit-application" method="post" >
+        <div class="form-group">
+
+
+
+        <div class="form-group {{'form-group-error' if validationPromoterNameError}}">
+            <label class="form-label" for="promotername">Promoter name</label>
+            {% if validationError %}<p class="error-message">{{ validationPromoterNameError }}</p>{% endif %}
+            <input class="form-control" id="promotername" name="promotername" type="text" value="{{ data['promotername'] }}">
+        </div>
+        <div class="form-group {{'form-group-error' if validationWorkReferenceError}}">
+            <label class="form-label" for="workreferencenumber">Work reference number</label>
+            {% if validationError %}<p class="error-message">{{ validationWorkReferenceError }}</p>{% endif %}
+            <input class="form-control" id="workreferencenumber" type="text" name="workreferencenumber" value="{{ data['workreferencenumber'] }}">
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="startdateday">Proposed start date</label>
+            {% if validationError %}<p class="error-message">{{ validationStartDateError }}</p>{% endif %}
+            <fieldset>
+                <div class="form-date">
+                    <div class="form-group form-group-day">
+                        <label class="form-label" for="startdateday">Day</label>
+                        <input class="form-control" id="startdateday" name="startdateday" type="number" pattern="[0-9]*" min="0" max="31" value="{{ data['start-day'] }}">
+                    </div>
+                    <div class="form-group form-group-month">
+                        <label class="form-label" for="startdatemonth">Month</label>
+                        <input class="form-control" id="startdatemonth" name="startdatemonth" type="number" pattern="[0-9]*" min="0" max="12" value="{{ data['start-month'] }}">
+                    </div>
+                    <div class="form-group form-group-year">
+                        <label class="form-label" for="startdateyear">Year</label>
+                        <input class="form-control" id="startdateyear" name="startdateyear" type="number" pattern="[0-9]*" min="0" max="2020" value="{{ data['start-year'] }}">
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="enddateday">Proposed end date</label>
+            <fieldset>
+                <div class="form-date">
+                    <div class="form-group form-group-day">
+                        <label class="form-label" for="enddateday">Day</label>
+                        <input class="form-control" id="enddateday" name="enddateday" type="number" pattern="[0-9]*" min="0" max="31" value="{{ data['end-day'] }}">
+                    </div>
+                    <div class="form-group form-group-month">
+                        <label class="form-label" for="enddatemonth">Month</label>
+                        <input class="form-control" id="enddatemonth" name="enddatemonth" type="number" pattern="[0-9]*" min="0" max="12" value="{{ data['end-month'] }}">
+                    </div>
+                    <div class="form-group form-group-year">
+                        <label class="form-label" for="enddateyear">Year</label>
+                        <input class="form-control" id="enddateyear" name="enddateyear" type="number" pattern="[0-9]*" min="0" max="2020" value="{{ data['end-year'] }}">
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <fieldset class="inline">
+            <div class="form-group {{'form-group-error' if validationWorkCategoryError}}">
+                <br/>
+                <label class="form-label" for="work-category-1">Work category</label>
+                {% if validationError %}<p class="error-message">{{ validationWorkCategoryError }}</p>{% endif %}
+                <div class="multiple-choice">
+                    <input id="work-category-1" type="radio" name="workcategorygroup" value="FPI" {{ checked('workcategorygroup','FPI') }}>
+                    <label for="work-category-1">FPI</label>
+                </div>
+                <div class="multiple-choice">
+                    <input id="work-category-2" type="radio" name="workcategorygroup" value="Minor" {{ checked('workcategorygroup','Minor') }}>
+                    <label for="work-category-2">Minor</label>
+                </div>
+                <div class="multiple-choice">
+                    <input id="work-category-3" type="radio" name="workcategorygroup" value="Standard" {{ checked('workcategorygroup','Standard') }}>
+                    <label for="work-category-3">Standard</label>
+                </div>
+                <div class="multiple-choice">
+                    <input id="work-category-4" type="radio" name="workcategorygroup" value="Major" {{ checked('workcategorygroup','Major') }}>
+                    <label for="work-category-4">Major</label>
+                </div>
+                <div class="multiple-choice">
+                    <input id="work-category-5" type="radio" name="workcategorygroup" value="Immediate - urgent" {{ checked('workcategorygroup','Immediate - urgent') }}>
+                    <label for="work-category-5">Immediate - urgent</label>
+                </div>
+                <br/>
+                <br/>
+                <div class="multiple-choice">
+                    <input id="work-category-6" type="radio" name="workcategorygroup" value="Immediate - emergency" {{ checked('workcategorygroup','Immediate - emergency') }}>
+                    <label for="work-category-6">Immediate - emergency</label>
+                </div>
+            </div>
+        </fieldset>
+        </div>
+
+        <input id="coords" name="coords" value="{{ data['shapecoords'] }}"/>
+        <div class="form-group">
+            <input type="submit" class="button" value="Save & Continue">
+        </div>
+
+    </form>
+</main>
+
+{% endblock %}

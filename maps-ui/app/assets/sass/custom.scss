@@ -1,0 +1,453 @@
+/* Custom CSS for mappting goes here */
+
+
+/* map stuff */
+
+#map {
+  height: calc(100vh - 100px);
+  width: 74vw;
+  position: absolute;
+  /*height: 100%;*/
+}
+
+#map .ol-zoom .ol-zoom-out {
+  background: rgb(12, 96, 163);
+  margin-top: 4px;
+}
+
+#map .ol-zoom .ol-zoom-in {
+  background: rgb(12, 96, 163);
+}
+
+#map .ol-zoomslider {
+  /*background-color: transparent;*/
+  top: 2.3em;
+}
+
+#map .ol-zoomslider-thumb {
+  background: rgb(12, 96, 163);
+}
+
+#map .ol-mouse-position {
+  background: rgb(12, 96, 163);
+  border-radius: 10px;
+  border-color: grey;
+  padding: 5px;
+  font: 12px arial, bold;
+  color: white;
+  top: auto;
+  bottom: 0.5em;
+  left: 0.5em;
+  right: auto;
+}
+
+#map .ol-nav-buttons {
+  background: rgba(51, 122, 183, .3);
+  top: auto;
+  bottom: 0.5em;
+  left: 0.5em;
+  right: auto;
+}
+
+.ol-control {
+  z-index: 10000;
+}
+
+.ol-zoom {
+  position: absolute !important;
+  left: 95vw !important;
+  background-color: transparent !important;
+}
+
+
+/* Search panel */
+
+#search-panel {
+  width: 26vw;
+  box-sizing: border-box;
+  height: calc(100vh - 107px);
+  padding: 0 2vw;
+  z-index: 10000000000;
+  background-color: white;
+  box-shadow: 3px 3px 2px #DEE0E2;
+  position: absolute;
+  overflow: auto;
+  top: 106px !important;
+  & .results-list li {
+    border-bottom: 1px solid #DEE0E2 !important;
+  }
+  & .address-list li {
+    border-bottom: none !important;
+    margin-bottom: 1em;
+  }
+  & .pager {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+  }
+  & .pager-items li {
+    display: inline;
+    margin: 0 5px;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  & .pager-controls {
+    float: right;
+  }
+}
+
+.search-result-header {
+  display: flex;
+  justify-content: space-between;
+  & .status {
+    position: relative;
+    top: 1.3em;
+  }
+}
+
+
+/* Panel open / close button */
+
+.panel-control {
+  background-color: white;
+  height: 2em;
+  width: 2em;
+  position: absolute;
+  left: 30vw;
+  top: 106px;
+  box-sizing: border-box;
+  box-shadow: 3px 3px 2px #DEE0E2;
+  text-align: center;
+  z-index: 10000000;
+  & img {
+    margin: auto;
+    width: 75%;
+    height: auto;
+    vertical-align: center;
+    position: relative;
+    top: 0.25em;
+  }
+}
+
+.open-button {
+  left: 0;
+}
+
+
+/* map phase banner */
+
+.map-phase-banner p {
+  width: 960px;
+  display: block;
+  margin: 0 auto;
+}
+
+
+/* map controls */
+
+#map_controls {
+  border: none;
+  /*text-align: right;*/
+  text-align: center;
+  & #type {
+    z-index: 10000000;
+    height: 3em;
+    line-height: 3em;
+    border: none;
+    position: relative;
+    top: 3em;
+    right: 0;
+    background: none;
+    overflow: hidden !important;
+    & option {
+      display: inline;
+      margin: 0.3em;
+      padding: 1em;
+      height: 3em;
+      border: 1px solid rgba(78, 78, 78, 0.3);
+      border-radius: 10px;
+      background-color: #2b8cc4;
+      color: white;
+      cursor: pointer;
+      font-size: 1.3em;
+    }
+  }
+}
+
+
+/* action links */
+
+.action-links ul {
+  float: right;
+  margin-top: 1em;
+}
+
+.action-links li {
+  display: inline;
+}
+
+
+/* citizen service */
+
+.citizen-search-panel {
+  top: 105px !important;
+  height: calc(100vh - 107px) !important;
+}
+
+.panel-control-citizen {
+  top: 105px !important;
+}
+
+.llc1-free-details {
+  width: 100%;
+}
+
+.payment-info-box {
+  border-top: 10px solid #005ea5;
+  position: relative;
+  top: -150px;
+}
+
+.payPromo {
+  border: 10px solid #BFC1C3;
+  padding-left: 1em;
+}
+
+.part-navigation ol {
+  padding: 0 30px;
+  & li {
+    list-style-type: decimal;
+    margin-bottom: 0.75em;
+  }
+}
+
+.search-fees td {
+  padding-left: 0.5em;
+  border: 1px solid #DEE0E2;
+}
+
+.search-fees thead td {
+  background-color: #BFC1C3;
+  font-weight: bold;
+}
+
+.search-fees tbody tr:nth-child(2n+2) {
+  background-color: #F8F8F8;
+}
+
+.login-box {
+  margin-top: 50px;
+  border-top: 10px solid #005EA5;
+}
+
+.sign-out {
+  text-align: right;
+  margin-bottom: -25px;
+}
+
+.dashboard td {
+  vertical-align: top;
+  width: 20%;
+}
+
+.dashboard tr {
+  cursor: pointer;
+  &:hover {
+    background-color: #F8F8F8;
+  }
+}
+
+.hidden-accordion-content {
+  display: none;
+}
+
+.accordion-child-1 td,
+.accordion-child-3 td {
+  border-bottom: none;
+}
+
+.accordion-parent-2 td {
+  border-top: 1px solid #bfc1c3;
+}
+
+.search-service-map {
+  left: 20vw;
+}
+
+
+/* add charge */
+
+.hiddenList {
+  display: none;
+}
+
+#search-panel .uprn-result li {
+  border-bottom: none !important;
+}
+
+
+/* LON */
+
+.hiddenForm,
+.hiddenListItem {
+  display: none;
+}
+
+
+/* hacks */
+
+// Cookie message appears in Firefox
+#global-cookie-message {
+  display: none !important;
+}
+
+.check-your-answers td:first-child {
+  font-weight: bold;
+  width: 30%;
+}
+
+.form-group-error {
+  margin-right: 15px;
+  border-left: 4px solid #b10e1e;
+  padding-left: 10px;
+}
+
+@media (min-width: 641px) {
+  .form-group-error {
+    border-left: 5px solid #b10e1e;
+    padding-left: 15px;
+  }
+}
+
+.form-control-error {
+  border: 4px solid #b10e1e;
+}
+
+.accordionControl {
+  position: absolute;
+  right: 10%;
+  cursor: pointer;
+}
+
+.accordionItem {
+  /*border: 1px solid #0b0c0c;*/
+  margin-bottom: 1em;
+  padding: 0 1em 0.5em 1em;
+}
+
+.accordionItem p span {
+  margin-right: 1em;
+}
+
+.download-panel {
+  border-left-color: #DF3034;
+  background-color: rgba(223, 48, 52, 0.1) !important;
+}
+
+.dashboardHeader {
+  border-bottom: 1px solid #BFC1C3;
+  padding-bottom: 0.1em;
+}
+
+.dashboardHeader span {
+  padding: 0 20px 1px 20px;
+}
+
+.tabHeader {
+  background-color: #DEE0E2;
+  margin-right: 0.2em;
+  padding-bottom: 1px;
+  cursor: pointer;
+}
+
+.activeTabHeader {
+  background-color: white;
+  border-top: 1px solid #BFC1C3;
+  border-left: 1px solid #BFC1C3;
+  border-right: 1px solid #BFC1C3;
+  border-bottom: none;
+}
+
+.payPromo:hover {
+  border-color: #2B8CC4;
+}
+
+.search-button {
+  height: 36px;
+  width: 36px;
+  cursor: pointer;
+  overflow: hidden;
+  background: #00823b url(../images/search-button.png) no-repeat 2px 50%;
+  position: relative;
+  right: 39px;
+  padding-bottom: 4px;
+  box-shadow: 1px 1px 0 1px #00823b
+}
+
+
+/* map legend */
+
+#legend {
+  position: absolute;
+  top: 4em;
+  right: 0;
+  z-index: 10000000000 !important;
+}
+
+#legend p {
+  position: fixed;
+  right: 13vw;
+}
+
+#legend ul {
+  box-shadow: 2px 2px 1px #BFC1C3;
+  width: 15vw;
+  background-color: white;
+  position: relative;
+  top: 1.8em;
+  padding: 1em;
+  font-size: 0.85em;
+}
+
+#legend li {
+  margin-bottom: 0.5em;
+}
+
+
+/* Login links for search service */
+
+#login-links li {
+  display: inline;
+  &:first-child {
+    margin-right: 1em;
+  }
+  &.notLoggedIn {
+    margin-right: 0 !important;
+  }
+}
+
+/* Map Controls */
+
+#draw-controls {
+  top: 1%;
+  right: 30%;
+  margin-right: 30px;
+}
+
+#draw-controls button {
+  display: inline;
+  height: auto;
+  width: auto;
+  padding: 14px;
+  margin-right: 4px;
+}
+
+.map-button {
+  cursor: pointer;
+  &.polygon {
+    background-size: cover;
+  }
+}

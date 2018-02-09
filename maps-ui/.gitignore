@@ -1,0 +1,14 @@
+.env
+.sass-cache
+.DS_Store
+.start.pid
+.port.tmp
+public
+lib/govuk_template.html
+govuk_modules
+node_modules/*
+.tmuxp.*
+package-lock.json
+.idea/
+/*.iml
+npm-debug.log

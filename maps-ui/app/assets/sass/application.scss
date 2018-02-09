@@ -1,0 +1,130 @@
+// Path to assets for use with the file-url function
+// in the govuk frontend toolkit's url-helpers partial
+$path: "/public/images/";
+
+// Import GOV.UK elements from /govuk-modules/, this will import the frontend toolkit and some base styles.
+// Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
+@import 'govuk-elements';
+
+// Take a look at in app/assets/sass/patterns/ to see which files are imported.
+@import 'patterns/check-your-answers';
+@import 'patterns/task-list';
+
+// Related items
+// (These styles will be moved to GOV.UK elements, duplicating here for now.)
+.govuk-related-items {
+  margin-top: $gutter;
+  border-top: 10px solid $govuk-blue;
+  padding-top: 5px;
+
+  .heading-medium {
+    margin-top: 0.3em;
+    margin-bottom: 0.5em;
+  }
+
+  li {
+    margin-bottom: 10px;
+    list-style-type: none;
+  }
+}
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+#dashboard h2 {
+  font-size:30px;
+  font-weight:bold;
+  margin:30px 0 5px 0;
+  padding:15px 0 0 0;
+}
+
+#dashboard .container-metrics {
+  background: $grey-4;
+  margin: 1em 0;
+}
+
+#dashboard .box-metrics {
+  background: white;
+  margin: 1em;
+  padding: 0em 1em;
+  border: 1px solid $grey-2;
+}
+
+#dashboard .number {
+  font-size:50px;
+  font-weight:bold;
+}
+
+#sub-nav{
+
+  background-color: #fff;
+  border-bottom: 1px solid #bfc1c3;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+  padding: 0;
+  z-index: 999;
+
+}
+#sub-nav li{
+  position:relative;
+  display:inline;
+}
+#sub-nav a{
+  display: inline-block;
+  font-weight: bold;
+  margin: 0;
+  outline: 0;
+  padding: 15px 30px;
+  text-decoration: none;
+}
+#sub-nav ul{
+  position:absolute;
+  /*top:100%; Uncommenting this makes the dropdowns work in IE7 */
+  left:-9999px;
+  margin:0;
+  padding:0;
+  text-align:left;
+}
+#sub-nav ul li{
+  display:block;
+}
+#sub-nav li:hover ul{
+  left:0;
+}
+#sub-nav li:hover a{
+  text-decoration:underline;
+  background:#f1f1f1;
+}
+#sub-nav li:hover ul a{
+  text-decoration:none;
+  background:#dde0e2;
+}
+#sub-nav li:hover ul a:hover{
+  text-decoration:underline;
+  background:#f1f1f1;
+}
+#sub-nav ul a{
+  white-space:nowrap;
+  display:block;
+  border-bottom:1px solid #ccc;
+}
+
+#sub-nav li a.active{
+  font-weight: bold;
+  background-color: #004A83;
+  color:#fff;
+
+
+}
+
+.container-button-right .button{
+  margin-top: 2em;
+  float: right;
+}
+
+.container-button-left .button{
+  margin-top: 2em;
+  float: left;
+}
+
+.advanced-search {
+  margin:0 0 0 20px;
+}

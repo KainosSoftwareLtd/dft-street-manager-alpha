@@ -1,0 +1,347 @@
+{% extends "tech-proto/map-layout.html" %}
+
+{% block page_title %}
+Forward Planning - Street Manager
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="https://openlayers.org/en/v4.5.0/css/ol.css" type="text/css">
+<script src="https://openlayers.org/en/v4.5.0/build/ol.js" type="text/javascript"></script>
+<script src="/public/javascripts/map_styles.js"></script>
+<script src="/public/javascripts/map_controls.js"></script>
+
+<main id="content" role="main" style="padding:0px">
+    <!-- alpha banner -->
+    {% include "includes/phase_banner_alpha.html" %}
+</main>
+
+<div id="map" class="map">
+
+    <div id="layerIcon">
+        <img src="/public/images/layers-icon.png">
+    </div>
+
+    <div id="legend" style="display: none">
+        <form>
+            <fieldset>
+                <legend>
+                    <span class="body-text">Works Categories</span>
+                </legend>
+                <div class="multiple-choice">
+                    <input id="layer-type-1" name="layer-types" type="checkbox" value="FPI">
+                    <label for="layer-type-1">FPI</label>
+                </div>
+                <div class="multiple-choice">
+                    <input id="layer-type-2" name="layer-types" type="checkbox" value="Minor">
+                    <label for="layer-type-2">Minor</label>
+                </div>
+                <div class="multiple-choice">
+                    <input id="layer-type-3" name="layer-types" type="checkbox" value="Standard">
+                    <label for="layer-type-3">Standard</label>
+                </div>
+                <div class="multiple-choice">
+                    <input id="layer-type-4" name="layer-types" type="checkbox" value="Major">
+                    <label for="layer-type-4">Major</label>
+                </div>
+                <div class="multiple-choice">
+                    <input id="layer-type-5" name="layer-types" type="checkbox" value="Immediate - urgent">
+                    <label for="layer-type-5">Restrictions</label>
+                </div>
+                <div class="multiple-choice">
+                    <input id="layer-type-6" name="layer-types" type="checkbox" value="Immediate - emergency">
+                    <label for="layer-type-4">Immediate - emergency</label>
+                </div>
+
+
+            </fieldset>
+        </form>
+    </div>
+
+    <div id="slider">
+        <input disabled type="text" id="amount" style="border: 0; background-color: #0c60a3; color: white; padding-left:10px; width: inherit;" />
+        <div id="slider-id">
+            <div class="ui-slider-handle"></div>
+        </div>
+    </div>
+
+</div>
+
+<div class="arrow_box" id="popup-container"></div>
+
+<div id="search-panel" class="charge-list">
+
+
+    <h1 class="heading-small">Search results for <span id="titleText"></span></h1>
+    <!-- <input class="form-control search-field maintain-searched" id="maintain-map-search" name="maintain-map-search" type="text"> -->
+    <input class="form-control" id="searched_term" type="text" value="{{searchDetails}}" name="searched_term">
+    <input class="button" type="submit" value="Search">
+
+    <div id="drawnArea" style="padding-top: 20px;"></div>
+    <div id="geoJsonString"></div>
+    <form action="permit-application-screen1" method="post">
+        <div class="form-group">
+            <input class="form-control" type="hidden" id="shapecoords" name="shapecoords">
+            <input id="create-work-button" class="button" type="submit" value="Create Work" style="display: none;">
+        </div>
+    </form>
+    <div id="results" class="results-block">
+    <ol class="results-list">
+
+        <li class="individualResults">
+            <div class="search-result-header">
+                <h2 class="heading-small"><a id="result" href="#"></a>W3 7XA</h2>
+            </div>
+            <p>Cowley Rd<br>London<br></p>
+        </li>
+    </ol>
+</div>
+
+</div>
+
+<style>
+
+    #map {
+        width: 100%;
+        position: relative;
+    }
+
+    #legend {
+        background-color: white;
+        position: absolute;
+        width: 240px;
+        padding: 10px;
+        top: 120px;
+        right: 50px;
+    }
+    #slider {
+        border-radius: 4px;
+        background: #fff;
+        padding: 2px;
+        position: absolute;
+        width: 450px;
+        bottom: 20px;
+        right: 50px;
+    }
+
+    #layerIcon {
+        position: absolute;
+        right: 50px;
+        top: 90px;
+    }
+
+    .ui-slider-handle.ui-corner-all.ui-state-default {
+        background-color: darkgray;
+        border: 1px solid black;
+    }
+    .ui-slider-range.ui-corner-all.ui-widget-header {
+        background-color: #adadad;
+    }
+    .ol-scale-line {
+        position: absolute;
+        left: 540px;
+        bottom: 20px;
+    }
+
+    #draw-controls {
+        right: 3%;
+    }
+
+    .ui-slider .ui-slider-handle {
+        width: 1.9em;
+    }
+
+    .arrow_box {
+        position: relative;
+        background: #fff;
+        border: 1px solid #003c88;
+        border-radius: 5px;
+        padding: 10px;
+    }
+    .arrow_box:after, .arrow_box:before {
+        top: 100%;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .arrow_box:after {
+        border-color: rgba(255, 255, 255, 0);
+        border-top-color: #fff;
+        border-width: 10px;
+        margin-left: -10px;
+    }
+    .arrow_box:before {
+        border-color: rgba(153, 153, 153, 0);
+        border-top-color: #003c88;
+        border-width: 11px;
+        margin-left: -11px;
+    }
+</style>
+
+
+
+
+<script type="text/javascript">
+  var MAP_CONFIG = {};
+
+  (function (MAP_CONFIG) {
+
+      var styles = {
+          'Point': new ol.style.Style({
+              image: new ol.style.Icon({
+                  src: '/public/images/map-marker-blue.png',
+                  anchor: [0.5, 25],
+                  anchorXUnits: 'fraction',
+                  anchorYUnits: 'pixels',
+              })
+          })
+      }
+
+      var styleFunction = function(feature) {
+          return styles[feature.getGeometry().getType()];
+      };
+
+
+
+    MAP_CONFIG.draw_layer_zindex = 2;
+    // Draw Source
+    MAP_CONFIG.draw_features = new ol.Collection();
+    MAP_CONFIG.draw_controls = new MAP_CONTROLS.draw_controls();
+    MAP_CONFIG.draw_source = new ol.source.Vector({ features: MAP_CONFIG.draw_features });
+    MAP_CONFIG.draw_layer = new ol.layer.Vector({
+      source: MAP_CONFIG.draw_source,
+      style: draw_layer_styles.style[draw_layer_styles.NONE],
+      zIndex: MAP_CONFIG.draw_layer_zindex
+    })
+    MAP_CONFIG.base_layer = new ol.layer.Tile({
+      source: new ol.source.OSM()
+    })
+
+    MAP_CONFIG.vector_source = new ol.source.Vector();
+
+    MAP_CONFIG.geojson_layer = new ol.layer.Vector({
+      source: MAP_CONFIG.vector_source,
+      style: styleFunction
+    })
+
+  })(MAP_CONFIG);
+
+  var slider = new ol.control.Control({element: document.getElementById('slider')});
+  var layerIcon = new ol.control.Control({element: document.getElementById('layerIcon')});
+
+  var legend = new ol.control.Control({element: document.getElementById('legend')});
+  var scaleLine = new ol.control.ScaleLine()
+
+  var map = new ol.Map({
+    target: 'map',
+    layers: [MAP_CONFIG.base_layer, MAP_CONFIG.geojson_layer, MAP_CONFIG.draw_layer],
+    controls: ol.control.defaults({attribution: false}).extend([
+      MAP_CONFIG.draw_controls, legend, scaleLine, slider, layerIcon
+    ]),
+    view: new ol.View({
+      center: ol.proj.fromLonLat([-0.252, 51.5073]),
+      zoom: 17
+    })
+  });
+
+  function showWorks(worksCategories) {
+      var queryParams = worksCategories.join('&');
+
+      fetch('http://localhost:8000/allworks?' + queryParams, {
+          method: 'GET',
+      }).then(function (response) {
+          return response.json();
+      }).then(function (json) {
+          var features = new ol.format.GeoJSON().readFeatures(json);
+          MAP_CONFIG.vector_source.addFeatures(features);
+      });
+  }
+
+  $("#result").click(function () {
+     var view = map.getView();
+     view.animate({zoom: 18, center: [-27683.567448866303, 6711417.071088102]})
+  });
+
+
+  var overlay = new ol.Overlay({
+    element: document.getElementById('popup-container'),
+    positioning: 'bottom-center',
+    offset: [0, -10]
+  });
+  map.addOverlay(overlay);
+
+  map.on('click', function(e) {
+    overlay.setPosition();
+    var features = map.getFeaturesAtPixel(e.pixel);
+    if (features) {
+      var coords = features[0].getGeometry().getCoordinates();
+      var properties = features[0].getProperties();
+      if(properties['work_reference_number']) {
+          var string = 'WRN: ' + properties['work_reference_number'] + '<br/>' +
+                  'Promoter Name: ' + properties['promoter_name'] + '<br/>' +
+                  'Works Category: ' + properties['works_category'] + '<br/>' +
+                  'Start Date: ' + properties['start_date'] + '<br/>' +
+                  'End Date: ' + properties['end_date'];
+          overlay.getElement().innerHTML = string;
+          overlay.setPosition(coords);
+      }
+    }
+  });
+
+  var dateOptions =  {year: 'numeric', month: 'numeric', day: 'numeric'};
+
+  $('#slider-id').slider({
+    range: true,
+    values: [ new Date().getTime() / 1000, new Date('2018/03/01').getTime() / 1000 ],
+    min: new Date().getTime() / 1000,
+    max: new Date('2018/03/01').getTime() / 1000,
+    step: 86400,
+    change: function (event, ui) {
+      plannedWorksSource.addFeatures(plannedWorks);
+
+      plannedWorksSource.forEachFeature(function (feature) {
+        if(feature.get('dateOfWorks') <= ui.values[0] || feature.get('dateOfWorks') >= ui.values[1])
+        {
+          plannedWorksSource.removeFeature(feature);
+        }
+      });
+    },
+    slide: function( event, ui ) {
+      $( "#amount" ).val('Start:  ' + (new Date(ui.values[ 0 ] *1000).toLocaleString('en-GB', dateOptions)) + "  |  End:  " + (new Date(ui.values[ 1 ] *1000)).toLocaleString('en-GB', dateOptions));
+    }
+  });
+
+  $( "#amount" ).val('Start:  ' + (new Date($( "#slider-id" ).slider( "values", 0 )*1000).toLocaleString('en-GB', dateOptions)) +
+    "  |  End:  " + (new Date($( "#slider-id" ).slider( "values", 1 )*1000)).toLocaleString('en-GB', dateOptions));
+    
+  $('input[name=layer-types]').change(function (event) {
+      var categories = []
+      $('input[type=checkbox]').each(function () {
+          if (this.checked) {
+              var filter = 'workcategory=' + $(this).val();
+              categories.push(filter)
+          }
+      });
+
+      MAP_CONFIG.vector_source.clear();
+
+      if(categories.length != 0){
+          showWorks(categories)
+      }
+  });
+
+  map.on('click', function (event) {
+    console.log(event.coordinate)
+  });
+
+  $('#layerIcon').click(function () {
+        $('#legend').toggle();
+  });
+
+</script>
+
+{% endblock %}

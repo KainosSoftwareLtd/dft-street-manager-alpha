@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Permit Application Confirmation - Street Manager
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <!-- alpha banner -->
+
+    {% include "includes/phase_banner_alpha.html" %}
+
+    <div class="breadcrumbs">
+        <div>
+            <!-- the rest of this label is hidden, only used for screenreaders -->
+            <span class="visuallyhidden"> to the previous page</span>
+            <a id="sign-out" href="sign_in" style="float:right">Sign out</a>
+            <span style="float:right; margin-right:10px;">promo@sm.com</span>
+        </div>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <div class="govuk-box-highlight">
+                <h1 class="heading-large">
+                    Permit Application created on
+                </h1>
+                <p class="font-large"id="currentDateTime"></p>
+                <p class="font-large">
+                    Your work reference number is <br>
+                    <strong class="bold">{{ data['workreferencenumber'] }}</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div style="padding-top: 10px">
+        <a href="map-search-results" class="button" style="margin-right: 20px;">Create new work record</a>
+        <a href="dashboard" style="vertical-align: bottom">Return to dashboard</a>
+    </div>
+        
+
+</main>
+
+<script>
+  var today = new Date();
+  var today1 = today.toLocaleDateString() + " " + today.toLocaleTimeString()
+  document.getElementById('currentDateTime').innerHTML=today1;
+</script>
+
+{% endblock %}
