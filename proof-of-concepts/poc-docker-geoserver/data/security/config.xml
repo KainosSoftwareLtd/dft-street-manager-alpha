@@ -3,7 +3,7 @@
   <authProviderNames>
     <string>default</string>
   </authProviderNames>
-  <configPasswordEncrypterName>pbePasswordEncoder</configPasswordEncrypterName>
+  <configPasswordEncrypterName>plainTextPasswordEncoder</configPasswordEncrypterName>
   <encryptingUrlParams>false</encryptingUrlParams>
   <filterChain>
     <filters name="web" class="org.geoserver.security.HtmlLoginFilterChain" interceptorName="interceptor" exceptionTranslationName="exception" path="/web/**,/gwc/rest/web/**,/" disabled="false" allowSessionCreation="true" ssl="false" matchHTTPMethod="false">

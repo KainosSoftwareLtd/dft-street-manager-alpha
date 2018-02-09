@@ -26,10 +26,10 @@ script:
   - ./release.sh ${DOCKER_REPO_HOSTNAME} ${GEOSERVER_REPO} $TRAVIS_COMMIT
   - cd ../../
   - cd maps-api && docker build -t ${DOCKER_REPO_HOSTNAME}/$(grep project_id ${HOME}/cicd.json |cut -d\" -f4)/${MAPS_API_REPO}:$TRAVIS_COMMIT .
-  - ./release.sh ${DOCKER_REPO_HOSTNAME} ${DOCKER_REPO_NAME} $TRAVIS_COMMIT
+  - ./release.sh ${DOCKER_REPO_HOSTNAME} ${MAPS_API_REPO} $TRAVIS_COMMIT
   - cd ../
   - cd maps-ui && docker build -t ${DOCKER_REPO_HOSTNAME}/$(grep project_id ${HOME}/cicd.json |cut -d\" -f4)/${MAPS_UI_REPO}:$TRAVIS_COMMIT .
-  - ./release.sh ${DOCKER_REPO_HOSTNAME} ${DOCKER_REPO_NAME} $TRAVIS_COMMIT
+  - ./release.sh ${DOCKER_REPO_HOSTNAME} ${MAPS_UI_REPO} $TRAVIS_COMMIT
   - cd ../
 
 deploy:

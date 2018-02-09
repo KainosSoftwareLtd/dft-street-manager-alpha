@@ -27,7 +27,7 @@ WORKDIR /home/geoserver
 
 USER geoserver
 RUN curl -OL http://sourceforge.net/projects/geoserver/files/GeoServer/${GEOSERVER_VERSION}/geoserver-${GEOSERVER_VERSION}-bin.zip && \
-    unzip geoserver-${GEOSERVER_VERSION}-bin.zip && \
+    unzip -q geoserver-${GEOSERVER_VERSION}-bin.zip && \
     rm -f geoserver-${GEOSERVER_VERSION}-bin.zip
 RUN curl https://sdk.cloud.google.com | bash
 
