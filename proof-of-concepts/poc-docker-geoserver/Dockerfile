@@ -28,8 +28,8 @@ WORKDIR /home/geoserver
 USER geoserver
 RUN curl -OL http://sourceforge.net/projects/geoserver/files/GeoServer/${GEOSERVER_VERSION}/geoserver-${GEOSERVER_VERSION}-bin.zip && \
     unzip -q geoserver-${GEOSERVER_VERSION}-bin.zip && \
-    rm -f geoserver-${GEOSERVER_VERSION}-bin.zip
-RUN curl https://sdk.cloud.google.com | bash
+    rm -f geoserver-${GEOSERVER_VERSION}-bin.zip && \
+    curl https://sdk.cloud.google.com | bash 2>&1 >/dev/null
 
 VOLUME ["/var/lib/geoserver_data"]
 
