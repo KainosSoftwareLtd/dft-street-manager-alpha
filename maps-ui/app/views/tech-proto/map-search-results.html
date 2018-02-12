@@ -294,11 +294,14 @@ Forward Planning - Street Manager
 
   var dateOptions =  {year: 'numeric', month: 'numeric', day: 'numeric'};
 
+  var startDate = new Date('2018/01/01').getTime() / 1000;
+  var endDate = new Date('2018/12/31').getTime() / 1000;
+
   $('#slider-id').slider({
     range: true,
     values: [ new Date().getTime() / 1000, new Date('2018/03/01').getTime() / 1000 ],
-    min: new Date().getTime() / 1000,
-    max: new Date('2018/03/01').getTime() / 1000,
+    min: startDate,
+    max: endDate,
     step: 86400,
     change: function (event, ui) {
       plannedWorksSource.addFeatures(plannedWorks);
@@ -307,6 +310,8 @@ Forward Planning - Street Manager
         if(feature.get('dateOfWorks') <= ui.values[0] || feature.get('dateOfWorks') >= ui.values[1])
         {
           plannedWorksSource.removeFeature(feature);
+          startDate = ui.values[0];
+          endDate = ui.values[1];
         }
       });
     },
@@ -326,7 +331,7 @@ Forward Planning - Street Manager
               categories.push(filter)
           }
       });
-
+      alert(new Date(startDate *1000).toLocaleString('en-GB', dateOptions));
       MAP_CONFIG.vector_source.clear();
 
       if(categories.length != 0){

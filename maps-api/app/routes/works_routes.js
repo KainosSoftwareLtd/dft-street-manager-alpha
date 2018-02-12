@@ -15,7 +15,7 @@ module.exports = function (app, pgPool) {
 
                         const query = {
                             text: 'INSERT INTO works(p_id, work_reference_number, promoter_name, start_date, end_date, works_category, the_geom)' +
-                            'VALUES($1, $2, $3, $4, $5, $6, ST_SetSRID(ST_GeomFromGeoJSON($7), 3857));',
+                            'VALUES($1, $2, $3, to_date($4, \'DD/MM/YYY\'), to_date($5, \'DD/MM/YYY\'), $6, ST_SetSRID(ST_GeomFromGeoJSON($7), 3857));',
                             values: [pid, req.body.workreferencenumber, req.body.promotername, startDate, endDate, req.body.workcategorygroup, req.body.coords]
                         }
 
@@ -40,15 +40,13 @@ module.exports = function (app, pgPool) {
     app.get('/allworks', (req,res) => {
         var queryText;
         if(Array.isArray(req.query.workcategory)){
-            console.log("it's an array")
-            queryText = "SELECT jsonb_build_object('type','FeatureCollection','features', jsonb_agg(feature))FROM (SELECT jsonb_build_object('type', 'Feature','id', p_id,'geometry', ST_AsGeoJSON(the_geom)::jsonb,'properties', to_jsonb(row) - 'p_id' - 'the_geom'  ) AS feature  FROM (SELECT * FROM works where works_category = ANY($1)) row) features;"
+            queryText = "SELECT jsonb_build_object('type','FeatureCollection','features', jsonb_agg(feature))FROM (SELECT jsonb_build_object('type', 'Feature','id', p_id,'geometry', ST_AsGeoJSON(the_geom)::jsonb,'properties', to_jsonb(row) - 'p_id' - 'the_geom'  ) AS feature  FROM (SELECT p_id, work_reference_number, promoter_name, to_char(start_date, \'DD/MM/YYYY\') as start_date, to_char(end_date, \'DD/MM/YYYY\') as end_date, works_category, the_geom FROM works where works_category = ANY($1) AND (start_date, end_date) OVERLAPS (to_date($2, 'DD/MM/YYYY'), to_date($3, 'DD/MM/YYYY'))) row) features;"
         } else {
-            console.log("it's not an array")
-            queryText = "SELECT jsonb_build_object('type','FeatureCollection','features', jsonb_agg(feature))FROM (SELECT jsonb_build_object('type', 'Feature','id', p_id,'geometry', ST_AsGeoJSON(the_geom)::jsonb,'properties', to_jsonb(row) - 'p_id' - 'the_geom'  ) AS feature  FROM (SELECT * FROM works where works_category = $1) row) features;"
+            queryText = "SELECT jsonb_build_object('type','FeatureCollection','features', jsonb_agg(feature))FROM (SELECT jsonb_build_object('type', 'Feature','id', p_id,'geometry', ST_AsGeoJSON(the_geom)::jsonb,'properties', to_jsonb(row) - 'p_id' - 'the_geom'  ) AS feature  FROM (SELECT p_id, work_reference_number, promoter_name, to_char(start_date, \'DD/MM/YYYY\') as start_date, to_char(end_date, \'DD/MM/YYYY\') as end_date, works_category, the_geom FROM works where works_category = $1 AND (start_date, end_date) OVERLAPS (to_date($2, 'DD/MM/YYYY'), to_date($3, 'DD/MM/YYYY'))) row) features;"
         }
         const query = {
             text: queryText,
-            values: [req.query.workcategory ]
+            values: [req.query.workcategory, req.query.startDate, req.query.endDate ]
         };
 
         console.log(query);

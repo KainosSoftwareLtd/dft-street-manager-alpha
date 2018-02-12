@@ -34,7 +34,7 @@ router.get('/works', function(req, res) {
   var queryParams = req.url.substr(i+1);
 
   var options = {
-    url: access.apiUrl + 'allworks?' + queryParams,
+    url: access.apiUrl + 'allworks?startDate=01/01/2018&endDate=31/12/2018&' + queryParams,
     method: 'GET'
   }
 
