@@ -251,7 +251,7 @@ Forward Planning - Street Manager
   function showWorks(worksCategories) {
       var queryParams = worksCategories.join('&');
 
-      fetch('http://localhost:8000/allworks?' + queryParams, {
+      fetch('/works?' + queryParams, {
           method: 'GET',
       }).then(function (response) {
           return response.json();

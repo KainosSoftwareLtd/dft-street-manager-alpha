@@ -3,3 +3,5 @@
 /maps-api/.idea
 /maps-api/*.iml
 /.idea
+/maps-ui/app/*.iml
+/maps-ui/docs/*.iml
