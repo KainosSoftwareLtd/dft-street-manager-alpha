@@ -1,0 +1,17 @@
+version: "3.2"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    volumes:
+      - ./data:/var/lib/geoserver_data
+    environment:
+      - PG_HOST=db
+
+  db:
+    image: kartoza/postgis:9.6-2.4

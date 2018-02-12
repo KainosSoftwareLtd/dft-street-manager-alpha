@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: dft-street-manager-maps-api
+  name: dft-street-manager-maps-api-service
+spec:
+  selector:
+    app: dft-street-manager-maps-api
+  ports:
+  - port: 80
+    targetPort: 3000
