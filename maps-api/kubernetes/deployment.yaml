@@ -28,27 +28,27 @@ spec:
           - name: PG_USER
             valueFrom:
               secretKeyRef:
-                name: dft-street-manager-maps-api-secret
+                name: database
                 key: PG_USER
           - name: PG_HOST
             valueFrom:
               secretKeyRef:
-                name: dft-street-manager-maps-api-secret
+                name: database
                 key: PG_HOST
           - name: PG_DATABASE
             valueFrom:
               secretKeyRef:
-                name: dft-street-manager-maps-api-secret
+                name: database
                 key: PG_DATABASE
           - name: PG_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: dft-street-manager-maps-api-secret
+                name: database
                 key: PG_PASSWORD
           - name: PG_PORT
             valueFrom:
               secretKeyRef:
-                name: dft-street-manager-maps-api-secret
+                name: database
                 key: PG_PORT
       nodeSelector:
         system: "false"
