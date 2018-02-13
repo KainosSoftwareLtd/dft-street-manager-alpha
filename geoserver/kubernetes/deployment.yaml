@@ -15,6 +15,12 @@ spec:
       containers:
       - name: dft-street-manager-geoserver
         image: <DOCKER_REPO_HOSTNAME>/<DOCKER_PROJECT_ID>/<DOCKER_REPO_NAME>:<DOCKER_TAG>
+        env:
+          - name: CONFIG_VERSION
+            valueFrom:
+              configMapKeyRef:
+                name: geoserver-config
+                key: version
         ports:
           - containerPort: 8080
         resources:

@@ -17,5 +17,6 @@ sed -i "s/<DOCKER_PROJECT_ID>/${PROJECT}/" deployment.yaml
 sed -i "s/<DOCKER_REPO_NAME>/${NAME}/" deployment.yaml
 sed -i "s/<DOCKER_TAG>/${TAG}/" deployment.yaml
 
+kubectl apply -f config.yaml
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
