@@ -10,3 +10,6 @@ open http://localhost:8080/geoserver
 ```
 
 Default JAVA_OPTS="-server -Xms1g -Xmx1g".
+
+# data directory
+This data directory is not really released/deployed any further. For more deatils how do we manage GeoServer configuration please contact Ops Team.
