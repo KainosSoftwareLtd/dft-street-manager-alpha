@@ -4,3 +4,4 @@ metadata:
   name: geoserver-config
 data:
   version: 51bb57e1f940503bd5ba4c694b5730c6cba5fc0e
+  bucket: lyrical-bolt-194013-geoserver-config
