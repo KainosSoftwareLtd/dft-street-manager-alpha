@@ -7,6 +7,15 @@ ENV GEOSERVER_HOME="/home/geoserver/geoserver-${GEOSERVER_VERSION}"
 ENV GEOSERVER_DATA_DIR="/var/lib/geoserver_data"
 ENV JAVA_OPTS="-server -Xms2g -Xmx2g"
 ENV PATH=$PATH:/home/geoserver/google-cloud-sdk/bin
+ENV PG_HOST="localhost"
+ENV PG_PORT=5432
+ENV PG_DATABASE="gis"
+ENV PG_USER="docker"
+ENV PG_PASSWORD="docker"
+ENV MASTERPASSWORD="geoserver"
+ENV CONFIG_BUCKET=""
+ENV CONFIG_VERSION=""
+ENV GOOGLE_KEY_FILE=""
 
 RUN apk upgrade --no-cache && \
     apk add --no-cache \
