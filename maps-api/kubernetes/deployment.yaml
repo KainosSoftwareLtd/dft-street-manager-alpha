@@ -20,10 +20,10 @@ spec:
         resources:
           limits:
             memory: 512Mi
-            cpu: 0.5m
+            cpu: 0.5
           requests:
             memory: 256Mi
-            cpu: 0.25m
+            cpu: 0.25
         env:
           - name: PG_USER
             valueFrom:

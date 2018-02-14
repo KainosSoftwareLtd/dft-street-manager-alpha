@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: geoserver-config
 data:
-  version: 26ea4b82cdb162d931cabf3cc69c9ad37f5cf5b0
+  version: 77935034424d78d0f3d8cfec229ac83871d72470
   bucket: lyrical-bolt-194013-geoserver-config
