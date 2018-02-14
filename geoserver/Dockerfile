@@ -30,8 +30,6 @@ RUN apk upgrade --no-cache && \
     mkdir -p /var/lib/geoserver_data && \
     chown -R geoserver:geoserver /var/lib/geoserver_data
 
-ADD docker-entrypoint.sh /
-
 WORKDIR /home/geoserver
 
 USER geoserver
@@ -39,6 +37,11 @@ RUN curl -OL http://sourceforge.net/projects/geoserver/files/GeoServer/${GEOSERV
     unzip -q geoserver-${GEOSERVER_VERSION}-bin.zip && \
     rm -f geoserver-${GEOSERVER_VERSION}-bin.zip && \
     curl https://sdk.cloud.google.com | bash 2>&1 >/dev/null
+
+USER root
+ADD docker-entrypoint.sh /
+
+USER geoserver
 
 VOLUME ["/var/lib/geoserver_data"]
 
