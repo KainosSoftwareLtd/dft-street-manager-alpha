@@ -23,5 +23,8 @@ spec:
           requests:
             memory: 256Mi
             cpu: 0.1
+        env:
+        - name: MAP_API_URL
+          value: "http://dft-street-manager-maps-api-service"
       nodeSelector:
         system: "false"

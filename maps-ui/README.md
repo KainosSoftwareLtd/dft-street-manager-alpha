@@ -40,3 +40,9 @@ Stop:
 2. Update `/app/views/index.html` with link and header to new iteration
 
 See `/docs/views/examples` for page examples and [prototype documentation](https://govuk-prototype-kit.herokuapp.com/docs/tutorials-and-examples) for details on how to handle interactions.
+
+## Env variables
+
+| Name | Default |
+|------|---------|
+| MAP_API_URL | http://localhost:8080 |
