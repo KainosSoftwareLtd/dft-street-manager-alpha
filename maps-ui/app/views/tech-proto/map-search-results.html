@@ -248,19 +248,6 @@ Forward Planning - Street Manager
     })
   });
 
-  function showWorks(worksCategories) {
-      var queryParams = worksCategories.join('&');
-
-      fetch('/works?' + queryParams, {
-          method: 'GET',
-      }).then(function (response) {
-          return response.json();
-      }).then(function (json) {
-          var features = new ol.format.GeoJSON().readFeatures(json);
-          MAP_CONFIG.vector_source.addFeatures(features);
-      });
-  }
-
   $("#result").click(function () {
      var view = map.getView();
      view.animate({zoom: 18, center: [-27683.567448866303, 6711417.071088102]})
@@ -299,21 +286,14 @@ Forward Planning - Street Manager
 
   $('#slider-id').slider({
     range: true,
-    values: [ new Date().getTime() / 1000, new Date('2018/03/01').getTime() / 1000 ],
-    min: startDate,
-    max: endDate,
+    values: [ new Date('2018/01/01').getTime() / 1000, new Date('2018/12/31').getTime() / 1000 ],
+    min: new Date('2018/01/01').getTime() / 1000,
+    max: new Date('2018/12/31').getTime() / 1000,
     step: 86400,
     change: function (event, ui) {
-      plannedWorksSource.addFeatures(plannedWorks);
-
-      plannedWorksSource.forEachFeature(function (feature) {
-        if(feature.get('dateOfWorks') <= ui.values[0] || feature.get('dateOfWorks') >= ui.values[1])
-        {
-          plannedWorksSource.removeFeature(feature);
-          startDate = ui.values[0];
-          endDate = ui.values[1];
-        }
-      });
+        startDate = ui.values[0];
+        endDate = ui.values[1];
+        showWorks();
     },
     slide: function( event, ui ) {
       $( "#amount" ).val('Start:  ' + (new Date(ui.values[ 0 ] *1000).toLocaleString('en-GB', dateOptions)) + "  |  End:  " + (new Date(ui.values[ 1 ] *1000)).toLocaleString('en-GB', dateOptions));
@@ -324,20 +304,40 @@ Forward Planning - Street Manager
     "  |  End:  " + (new Date($( "#slider-id" ).slider( "values", 1 )*1000)).toLocaleString('en-GB', dateOptions));
     
   $('input[name=layer-types]').change(function (event) {
-      var categories = []
+      showWorks();
+  });
+
+  function showWorks() {
+      //alert(map.getView().calculateExtent());
+
+      var queryParams = []
       $('input[type=checkbox]').each(function () {
           if (this.checked) {
               var filter = 'workcategory=' + $(this).val();
-              categories.push(filter)
+              queryParams.push(filter)
           }
       });
-      alert(new Date(startDate *1000).toLocaleString('en-GB', dateOptions));
+
       MAP_CONFIG.vector_source.clear();
 
-      if(categories.length != 0){
-          showWorks(categories)
+      if(queryParams.length != 0){
+          var startDateParam = 'startDate=' + (new Date(startDate *1000).toLocaleString('en-GB', dateOptions));
+          queryParams.push(startDateParam)
+          var endDateParam = 'endDate=' + (new Date(endDate *1000).toLocaleString('en-GB', dateOptions));
+          queryParams.push(endDateParam)
+
+          var queryString = queryParams.join('&');
+
+          fetch('/works?' + queryString, {
+              method: 'GET',
+          }).then(function (response) {
+              return response.json();
+          }).then(function (json) {
+              var features = new ol.format.GeoJSON().readFeatures(json);
+              MAP_CONFIG.vector_source.addFeatures(features);
+          });
       }
-  });
+  }
 
   map.on('click', function (event) {
     console.log(event.coordinate)

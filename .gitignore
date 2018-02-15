@@ -6,3 +6,4 @@ node_modules
 /.idea
 /maps-ui/app/*.iml
 /maps-ui/docs/*.iml
+/maps-api/*.log
