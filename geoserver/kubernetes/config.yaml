@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: geoserver-config
+data:
+  version: 33da2a8bd53554302cc7b5b639fad10a8795f132
+  bucket: lyrical-bolt-194013-geoserver-config

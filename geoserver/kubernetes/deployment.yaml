@@ -1,29 +1,36 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: dft-street-manager-maps-api-deployment
+  name: dft-street-manager-geoserver-deployment
 spec:
   selector:
     matchLabels:
-      app: dft-street-manager-maps-api
+      app: dft-street-manager-geoserver
   replicas: 2
   template:
     metadata:
       labels:
-        app: dft-street-manager-maps-api
+        app: dft-street-manager-geoserver
     spec:
       containers:
-      - name: dft-street-manager-maps-api
+      - name: dft-street-manager-geoserver
         image: <DOCKER_REPO_HOSTNAME>/<DOCKER_PROJECT_ID>/<DOCKER_REPO_NAME>:<DOCKER_TAG>
-        ports:
-          - containerPort: 3000
-        resources:
-          limits:
-            memory: 512Mi
-          requests:
-            memory: 256Mi
-            cpu: 0.1
         env:
+          - name: MASTERPASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: geoserver-config
+                key: MASTERPASSWORD
+          - name: CONFIG_BUCKET
+            valueFrom:
+              configMapKeyRef:
+                name: geoserver-config
+                key: bucket
+          - name: CONFIG_VERSION
+            valueFrom:
+              configMapKeyRef:
+                name: geoserver-config
+                key: version
           - name: PG_USER
             valueFrom:
               secretKeyRef:
@@ -49,5 +56,18 @@ spec:
               secretKeyRef:
                 name: database
                 key: PG_PORT
+          - name: GOOGLE_KEY_FILE
+            valueFrom:
+              secretKeyRef:
+                name: geoserver-config
+                key: SERVICE_ACCOUNT_FILE
+        ports:
+          - containerPort: 8080
+        resources:
+          limits:
+            memory: 2048Mi
+          requests:
+            memory: 1024Mi
+            cpu: 0.1
       nodeSelector:
         system: "false"

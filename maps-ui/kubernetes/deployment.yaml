@@ -20,9 +20,8 @@ spec:
         resources:
           limits:
             memory: 512Mi
-            cpu: 0.5m
           requests:
             memory: 256Mi
-            cpu: 0.25m
+            cpu: 0.1
       nodeSelector:
         system: "false"
