@@ -16,7 +16,7 @@ spec:
       - name: dft-street-manager-maps-api
         image: <DOCKER_REPO_HOSTNAME>/<DOCKER_PROJECT_ID>/<DOCKER_REPO_NAME>:<DOCKER_TAG>
         ports:
-          - containerPort: 3000
+          - containerPort: 8000
         resources:
           limits:
             memory: 512Mi
