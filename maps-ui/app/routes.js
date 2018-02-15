@@ -12,7 +12,7 @@ router.get('/', function (req, res) {
 router.post('/tech-proto/confirm-permit-application', function (req, res) {
 
   var options = {
-    url: access.apiUrl + 'works',
+    url: access.apiUrl + '/works',
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
@@ -34,7 +34,7 @@ router.get('/works', function(req, res) {
   var queryParams = req.url.substr(i+1);
 
   var options = {
-    url: access.apiUrl + 'allworks?' + queryParams,
+    url: access.apiUrl + '/allworks?' + queryParams,
     method: 'GET'
   }
 

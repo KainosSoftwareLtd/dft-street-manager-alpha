@@ -1,3 +1,3 @@
 module.exports = {
-    apiUrl: process.env.MAP_API_URL || 'http://localhost:8000/'
+    apiUrl: process.env.MAP_API_URL || 'http://localhost:8000'
 }
