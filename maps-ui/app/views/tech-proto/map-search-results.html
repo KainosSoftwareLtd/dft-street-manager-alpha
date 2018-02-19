@@ -308,8 +308,6 @@ Forward Planning - Street Manager
   });
 
   function showWorks() {
-      //alert(map.getView().calculateExtent());
-
       var queryParams = []
       $('input[type=checkbox]').each(function () {
           if (this.checked) {
@@ -318,6 +316,7 @@ Forward Planning - Street Manager
           }
       });
 
+
       MAP_CONFIG.vector_source.clear();
 
       if(queryParams.length != 0){
@@ -325,6 +324,9 @@ Forward Planning - Street Manager
           queryParams.push(startDateParam)
           var endDateParam = 'endDate=' + (new Date(endDate *1000).toLocaleString('en-GB', dateOptions));
           queryParams.push(endDateParam)
+
+          var extent = 'extent=' + map.getView().calculateExtent();
+          queryParams.push(extent);
 
           var queryString = queryParams.join('&');
 
