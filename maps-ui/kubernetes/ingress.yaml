@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: 'true'
   name: dft-street-manager-maps-ui-ingress
 spec:
   rules:
@@ -13,3 +14,7 @@ spec:
               serviceName: dft-street-manager-maps-ui-service
               servicePort: 80
             path: /
+  tls:
+    - hosts:
+      - "develop.stwrks-dev.net"
+      secretName: dft-street-manager-maps-ui
