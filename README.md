@@ -1,6 +1,10 @@
 # dft-street-manager-alpha
 Repo for the DfT Street Manager alpha project
 
+## API prototype architecture
+
+![architecture-diagram](https://github.com/KainosSoftwareLtd/dft-street-manager-alpha/api-arch.png)
+
 ## Works database
 
 The works database for the technical prototype is a single table in PostGis with the column to hold the shape geometry and some works data fields. 
