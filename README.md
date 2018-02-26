@@ -3,7 +3,7 @@ Repo for the DfT Street Manager alpha project
 
 ## API prototype architecture
 
-![architecture-diagram](https://github.com/KainosSoftwareLtd/dft-street-manager-alpha/api-arch.png)
+![architecture-diagram](https://github.com/KainosSoftwareLtd/dft-street-manager-alpha/blob/master/api-arch.png)
 
 ## Works database
 
