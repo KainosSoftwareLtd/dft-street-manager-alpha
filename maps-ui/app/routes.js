@@ -26,7 +26,7 @@ router.post('/tech-proto/confirm-permit-application', function (req, res) {
     }
   });
 
-  res.redirect('tech-proto/confirm-permit-application.html')
+  res.redirect('confirm-permit-application.html')
 })
 
 router.get('/works', function(req, res) {
