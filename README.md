@@ -5,6 +5,40 @@ Repo for the DfT Street Manager alpha project
 
 ![architecture-diagram](https://github.com/KainosSoftwareLtd/dft-street-manager-alpha/blob/master/api-arch.png)
 
+## Requires
+
+NodeJS (v8+)
+
+PostGIS instance
+
+For development purposes the following docker image was used:
+
+https://hub.docker.com/r/mdillon/postgis/
+
+The following command is used to start the postgis instance:
+```
+docker run --name some-postgis -e POSTGRES_PASSWORD=postgres -e ALLOW_IP_RANGE=0.0.0.0/0 -p 5432:5432 -d mdillon/postgis
+```
+
+## Run
+
+### Maps UI project
+```
+npm install
+npm start
+```
+
+### Maps API project
+```
+npm install
+npm run dev
+```
+
+### Postgis instance
+```
+docker start some-postgis
+```
+
 ## Works database
 
 The works database for the technical prototype is a single table in PostGis with the column to hold the shape geometry and some works data fields. 
