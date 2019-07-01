@@ -1,4 +1,7 @@
 # dft-street-manager-alpha
+
+**NOTE:This repo is no longer in use, Street Manager code is now under DfT control, this content shows thinking and approach at time of the alpha project only.**
+
 Repo for the DfT Street Manager alpha project
 
 ## API prototype architecture
