@@ -32,7 +32,7 @@
     "gulp-sourcemaps": "^2.6.0",
     "gulp-util": "^3.0.7",
     "mapbox-gl": "^0.43.0",
-    "marked": "^0.3.6",
+    "marked": "^4.0.10",
     "minimist": "1.2.0",
     "node-fetch": "^2.0.0",
     "notifications-node-client": "^3.0.0",
