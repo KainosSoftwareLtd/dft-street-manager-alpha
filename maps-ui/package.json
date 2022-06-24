@@ -34,7 +34,7 @@
     "mapbox-gl": "^0.43.0",
     "marked": "^0.3.6",
     "minimist": "1.2.0",
-    "node-fetch": "^2.0.0",
+    "node-fetch": "^2.6.7",
     "notifications-node-client": "^3.0.0",
     "nunjucks": "^2.5.2",
     "ol": "^4.6.4",
