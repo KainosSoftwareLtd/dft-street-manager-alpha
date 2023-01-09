@@ -35,7 +35,7 @@
     "marked": "^0.3.6",
     "minimist": "1.2.0",
     "node-fetch": "^2.0.0",
-    "notifications-node-client": "^3.0.0",
+    "notifications-node-client": "^6.0.0",
     "nunjucks": "^2.5.2",
     "ol": "^4.6.4",
     "portscanner": "^2.1.1",
