@@ -10,7 +10,7 @@
   "author": "Steven Alexander",
   "license": "",
   "dependencies": {
-    "soap": "^0.23.0"
+    "soap": "^1.0.0"
   },
   "devDependencies": {
     "standard": "^10.0.3"
